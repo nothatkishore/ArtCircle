@@ -6,13 +6,13 @@ import { StatusBar } from 'expo-status-bar';
 import { Redirect, router } from 'expo-router';
 import TypingText from '../components/TypingText';
 
-const Index = () => 
+const app = () => 
 {
  
   const [test, settest] = useState(true)
 
   if (test) {
-    return <Redirect href='/index' />;
+    return <Redirect href='/searchLocation' />;
   }
 
 
@@ -86,4 +86,4 @@ const Index = () =>
   );
 }
 
-export default Index;
+export default app;

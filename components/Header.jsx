@@ -1,0 +1,51 @@
+import { View, Text, Image, TouchableOpacity } from 'react-native'
+import React from 'react'
+import user from '../assets/icons/user.png'
+import bell from '../assets/icons/bell.png'
+import { router } from 'expo-router'
+
+const Header = () => 
+{
+  return (
+    <View className='flex-row p-3 border-b-[1px] border-b-slate-800 items-center justify-between mb-5'>
+
+        <View>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => router.push('/profile')}
+            >
+              <Image 
+                  source={user}
+                  resizeMode='contain'
+                  className='h-[40px] w-[40px] bg-white rounded-full'
+              />
+            </TouchableOpacity>
+        </View>
+
+        <View className='items-center'>
+          <Text className='text-green-100 text-sm'>
+            Association of Cine & TV
+          </Text>
+          <Text className='text-blue-100 text-sm'>
+            Art directors of Southern India
+          </Text>
+        </View>
+
+        <View>
+            <TouchableOpacity
+              activeOpacity={0.7}
+              onPress={() => router.push('/notification')}
+            >
+              <Image 
+                  source={bell}
+                  resizeMode='contain'
+                  className='h-[30px] w-[30px]'
+              />
+            </TouchableOpacity>
+        </View>
+
+    </View>
+  )
+}
+
+export default Header
