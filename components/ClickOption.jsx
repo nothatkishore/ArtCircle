@@ -8,15 +8,19 @@ const ClickOption = ({ name, handlePress, icon }) => {
             activeOpacity={0.8}
             onPress={handlePress}
         >
-            <View className='p-4 rounded-xl border border-[#FFA001] flex-col justify-center items-center'>
+            <View className='mx-5 my-3 p-5 px-6 shadow-2xl shadow-[#ffa629] bg-gray-50 rounded-xl flex-row items-center'>
 
-                    <Image 
-                        source = {icon}
-                        resizeMode='contain'
-                        className='h-[50px] w-[50px]'
-                    />
+                    <View className='justify-start'>
+                        <Image 
+                            source = {icon}
+                            resizeMode='contain'
+                            className='h-[40px] w-[40px]'
+                        />
+                    </View>
 
-                    <Text className='text-lg font-light text-white text-center'>{name}</Text>                
+                    <View className='justify-start flex-1 px-5'>
+                        <Text className='text-lg font-light text-black'>{name}</Text> 
+                    </View>               
             </View>
         </TouchableOpacity>
 

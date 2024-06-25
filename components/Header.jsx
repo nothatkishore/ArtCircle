@@ -3,11 +3,13 @@ import React from 'react'
 import user from '../assets/icons/user.png'
 import bell from '../assets/icons/bell.png'
 import { router } from 'expo-router'
+import { StatusBar } from 'expo-status-bar' 
+
 
 const Header = () => 
 {
   return (
-    <View className='flex-row p-3 border-b-[1px] border-b-slate-800 items-center justify-between'>
+    <View className='flex-row p-3 border-b-[1px] border-b-slate-200 mb-2 items-center justify-between bg-[#ffa629]'>
 
         <View>
             <TouchableOpacity
@@ -17,16 +19,16 @@ const Header = () =>
               <Image 
                   source={user}
                   resizeMode='contain'
-                  className='h-[40px] w-[40px] bg-white rounded-full'
+                  className='h-[45px] w-[45px] rounded-full'
               />
             </TouchableOpacity>
         </View>
 
         <View className='items-center'>
-          <Text className='text-green-100 text-sm'>
+          <Text className='text-white text-base font-light'>
             Association of Cine & TV
           </Text>
-          <Text className='text-blue-100 text-sm'>
+          <Text className='text-white text-base font-light'>
             Art directors of Southern India
           </Text>
         </View>
@@ -43,7 +45,7 @@ const Header = () =>
               />
             </TouchableOpacity>
         </View>
-
+        <StatusBar style='light' backgroundColor='#ffa629' />
     </View>
   )
 }

@@ -18,29 +18,29 @@ const create = () => {
 
         <Header />
 
-        <View className='bg-blue-300 h-full w-full p-5'>
+        <View className='h-full w-full p-5'>
 
           <Card
             BigText='Add Members'
-            SmallText=''
+            SmallText='You can new members'
             PATH='addMember'
           />
 
           <Card
             BigText='Add Setproperties'
-            SmallText=''
+            SmallText='Post set pictures'
             PATH='addSetprops'
           />
 
           <Card
             BigText='Add Project'
-            SmallText=''
+            SmallText='Tell us about your new movie'
             PATH='addMovies'
           />
 
           <Card
             BigText='Publish post'
-            SmallText=''
+            SmallText='Write about your work'
             PATH='write'
           />
 

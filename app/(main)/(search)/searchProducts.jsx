@@ -18,7 +18,7 @@ const searchProducts = () =>
   )
 
   return (
-    <SafeAreaView className='bg-black h-full w-full'>
+    <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
       <Header />
       <View className='mb-2'>
         <Text className='text-white text-xl font-light text-center'>Find Shops</Text>

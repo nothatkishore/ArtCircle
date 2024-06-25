@@ -9,7 +9,7 @@ import { router } from 'expo-router'
 
 const search = () => {
   return (
-    <SafeAreaView className='bg-black h-full w-full'>
+    <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
       <Header />
       <ClickOption 
         name='Search locations'

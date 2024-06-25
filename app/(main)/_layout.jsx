@@ -34,14 +34,12 @@ const MainLayout = () => {
         {
           {
             tabBarShowLabel: false,
-            tabBarActiveTintColor: '#FFA001',
-            tabBarInactiveTintColor: '#CDCDE0',
+            tabBarActiveTintColor: '#000',
+            tabBarInactiveTintColor: '#fff',
             tabBarStyle:
             {
               height: 60,
-              backgroundColor: 'black',
-              borderTopWidth: 1,
-              borderTopColor: '#232533'
+              backgroundColor: '#ffa629',
             }
           }
         }
@@ -150,7 +148,6 @@ const MainLayout = () => {
         />
 
       </Tabs>
-
     </>
   )
 }
