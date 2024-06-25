@@ -6,7 +6,7 @@ const SearchBar = ({url, placeholder, icon, data}) =>
   const [search, setsearch] = useState('')
 
   return (
-    <View className='bg-gray-100 mx-5 p-2 rounded-lg flex-row items-center'>
+    <View className='bg-gray-50 shadow-lg mx-5 p-2 rounded-lg flex-row items-center'>
       <TextInput 
         value={search}
         onChangeText={(text) => setsearch(text)}
