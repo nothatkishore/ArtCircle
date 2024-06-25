@@ -17,34 +17,38 @@ const create = () => {
       <SafeAreaView className='bg-black h-full w-full'>
 
         <Header />
-
+        <ScrollView>
         <View className='h-full w-full p-5'>
 
-          <Card
-            BigText='Add Members'
-            SmallText='You can new members'
-            PATH='addMember'
-          />
+<Card
+  BigText='Add Members'
+  SmallText='You can new members'
+  PATH='addMember'
+/>
 
-          <Card
-            BigText='Add Setproperties'
-            SmallText='Post set pictures'
-            PATH='addSetprops'
-          />
+<Card
+  BigText='Add Setproperties'
+  SmallText='Post set pictures'
+  PATH='addSetprops'
+/>
 
-          <Card
-            BigText='Add Project'
-            SmallText='Tell us about your new movie'
-            PATH='addMovies'
-          />
+<Card
+  BigText='Add Project'
+  SmallText='Tell us about your new movie'
+  PATH='addMovies'
+/>
 
-          <Card
-            BigText='Publish post'
-            SmallText='Write about your work'
-            PATH='write'
-          />
+<Card
+  BigText='Publish post'
+  SmallText='Write about your work'
+  PATH='write'
+/>
 
-        </View>
+</View>
+
+        </ScrollView>
+
+       
 
       </SafeAreaView>
       <StatusBar style='light' />
