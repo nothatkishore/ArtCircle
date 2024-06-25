@@ -8,11 +8,10 @@ import TypingText from '../components/TypingText';
 
 const app = () => 
 {
- 
   const [test, settest] = useState(true)
 
   if (test) {
-    return <Redirect href='/searchLocation' />;
+    return <Redirect href='/create' />;
   }
 
 

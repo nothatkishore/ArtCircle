@@ -68,24 +68,26 @@ const MainLayout = () => {
         />
 
         <Tabs.Screen
-          name='payments'
+          name='(search)'
           options=
           {
             {
-              title: 'Payments',
+              title: 'Search',
               headerShown: false,
               tabBarIcon: ({ color, focused }) =>
               (
                 <TabIcon
-                  icon={payments}
+                  icon={search}
                   color={color}
-                  name='Payments'
+                  name='Search'
                   focused={focused}
                 />
               )
             }
           }
         />
+
+
 
         <Tabs.Screen
           name='(create)'
@@ -108,18 +110,18 @@ const MainLayout = () => {
         />
 
         <Tabs.Screen
-          name='(search)'
+          name='payments'
           options=
           {
             {
-              title: 'Search',
+              title: 'Payments',
               headerShown: false,
               tabBarIcon: ({ color, focused }) =>
               (
                 <TabIcon
-                  icon={search}
+                  icon={payments}
                   color={color}
-                  name='Search'
+                  name='Payments'
                   focused={focused}
                 />
               )

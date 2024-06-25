@@ -9,50 +9,42 @@ import addM from '../../../assets/icons/addM.png'
 import setP from '../../../assets/icons/setP.png'
 import write from '../../../assets/icons/write.png'
 import movie from '../../../assets/icons/movie.png'
+import Card from '../../../components/Card'
 
-const create = () => 
-{
+const create = () => {
   return (
     <>
       <SafeAreaView className='bg-black h-full w-full'>
 
         <Header />
 
-        <ScrollView className='h-full w-full'>
+        <View className='bg-blue-300 h-full w-full p-5'>
 
-            <View>
-              <ClickOption 
-                name='Add Members'
-                icon={addM}
-                handlePress={() => router.push('/addMember')}
-              />
-            </View>
+          <Card
+            BigText='Add Members'
+            SmallText=''
+            PATH='addMember'
+          />
 
-            <View>
-              <ClickOption 
-                name='Add Movies'
-                icon={movie}
-                handlePress={() => router.push('/addMovies')}
-              />
-            </View>
+          <Card
+            BigText='Add Setproperties'
+            SmallText=''
+            PATH='addSetprops'
+          />
 
-            <View>
-              <ClickOption 
-                name='Set Properties'
-                icon={setP}
-                handlePress={() => router.push('/addSetprops')}
-              />
-            </View>
+          <Card
+            BigText='Add Project'
+            SmallText=''
+            PATH='addMovies'
+          />
 
-            <View>
-              <ClickOption 
-                name='Write'
-                icon={write}
-                handlePress={() => router.push('/write')}
-              />
-            </View>
+          <Card
+            BigText='Publish post'
+            SmallText=''
+            PATH='write'
+          />
 
-        </ScrollView>
+        </View>
 
       </SafeAreaView>
       <StatusBar style='light' />

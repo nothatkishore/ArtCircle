@@ -7,7 +7,7 @@ import logo from '../../../assets/images/logo.png'
 
 
 const spots = () => {
-  const [location, setlocation] = useState('')
+  const [store, setstore] = useState('')
 
   const data = [{ name: "Kishore", role: "Software Engineer", image: logo }, { name: "John", role: "Doctor" }, { name: "John", role: "Doctor" }, { name: "John", role: "Doctor" }, { name: "John", role: "Doctor" }, { name: "John", role: "Doctor" }, { name: "John", role: "Doctor" }, { name: "John", role: "Doctor" }]
 
@@ -17,7 +17,7 @@ const spots = () => {
       BigText={item.name}
       SmallText={item.role}
       image={item.image}
-      PATH='spotDetails'
+      PATH='productDetails'
     />
   )
 
@@ -26,7 +26,7 @@ const spots = () => {
 
       <Header />
       <View className='mb-2'>
-        <Text className='text-white text-center text-xl font-light'>Shooting spots at {location || 'Location'}</Text>
+        <Text className='text-white text-center text-xl font-light'>Products at {store || 'Shop name'}</Text>
       </View>
 
       <FlatList
