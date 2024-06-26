@@ -44,8 +44,8 @@ const ProductDetails = () => {
             />
 
             <View className='bg-gray-50 h-1/3 p-5 m-7 rounded-2xl shadow-2xl shadow-[#ffa629]'>
-                <Text className='text-xl font-base '>About location:</Text>
-                <Text>This space contains all the necessary information about the location</Text>
+                <Text className='text-xl font-base '>About product:</Text>
+                <Text>This space contains all the necessary information about the product</Text>
             </View>
 
         </SafeAreaView>

@@ -8,11 +8,12 @@ import search from '../../../assets/icons/find-store.png'
 
 const searchProducts = () => 
 {
-  const data = [{ name : "Kishore", role : "Software Engineer" }, { name : "John", role : "Doctor" }, { name : "John", role : "Doctor" }, { name : "John", role : "Doctor" }, { name : "John", role : "Doctor" }, { name : "John", role : "Doctor" }, { name : "John", role : "Doctor" }, { name : "John", role : "Doctor" }]
+  const data = [{ name : "Product Name", role : "Store name" }, { name : "Product Name", role : "Store Name" }, { name : "Product Name", role : "Store Name" }, { name : "Product Name", role : "Store Name" }, { name : "Product Name", role : "Store Name" }, { name : "Product Name", role : "Store Name" }, { name : "Product Name", role : "Store Name" }, { name : "Product Name", role : "Store Name" }]
   const renderItems = ({ item }) => (
     <Card 
-      BigText = {item.name}
-      SmallText = {item.role}
+      BigText = {item.role}
+      SmallText = {item.name}
+      xSmallText='Location link'
       PATH='productDetails'
     />
   )
