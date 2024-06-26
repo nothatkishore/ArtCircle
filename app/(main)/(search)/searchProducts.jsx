@@ -13,19 +13,16 @@ const searchProducts = () =>
     <Card 
       BigText = {item.name}
       SmallText = {item.role}
-      PATH='products'
+      PATH='productDetails'
     />
   )
 
   return (
     <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
       <Header />
-      <View className='mb-2'>
-        <Text className='text-white text-xl font-light text-center'>Find Shops</Text>
-      </View>
       <SearchBar 
         icon={search}
-        placeholder='Search shops'
+        placeholder='Search products'
         data={data}
       />
 
@@ -34,7 +31,7 @@ const searchProducts = () =>
         renderItem={renderItems}
         horizontal={false}
         decelerationRate='normal'
-        className='m-4'
+        className='mx-5'
         showsVerticalScrollIndicator={false}
       />
     </SafeAreaView>

@@ -13,16 +13,13 @@ const searchLocation = () =>
     <Card 
       BigText = {item.name}
       SmallText = {item.role}
-      PATH='spots'
+      PATH='spotDetails'
     />
   )
 
   return (
-    <SafeAreaView className='bg-black h-full w-full'>
+    <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
       <Header />
-      <View className='mb-2'>
-        <Text className='text-white text-xl font-light text-center'>Find shooting spots</Text>
-      </View>
       <SearchBar 
         icon={search}
         placeholder='Search location'

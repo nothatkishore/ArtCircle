@@ -1,40 +1,38 @@
 import { View, Text, Image, FlatList } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context' 
+import React from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import Header from '../../../components/Header'
+import placeHolder from '../../../assets/images/placeHolder.jpg'
 
-const spotDetails = () => 
+const productDetails = () => 
 {
-  const data = [{image1 : 'image1 goes here'},{image1 : 'image1 goes here'},{image1 : 'image1 goes here'},{image1 : 'image1 goes here'},{image1 : 'image1 goes here'},{image1 : 'image1 goes here'},{image1 : 'image1 goes here'},{image1 : 'image1 goes here'},{image1 : 'image1 goes here'},{image1 : 'image1 goes here'}]
-  const renderItems = ( {item} ) =>
-  (
-    <View className='bg-blue-400 my-2 p-4'>
-      <Text>{item.image1}</Text>
-    </View>
-  )
 
-  const footer = () =>
-  (
-    <Text className='text-white text-3xl'>Footer</Text>
-  )
+  const data = [ { id : 1, image : placeHolder }, { id : 2, image : placeHolder }, { id : 3, image : placeHolder }, { id : 4, image : placeHolder }, { id : 5, image : placeHolder }, { id : 6, image : placeHolder }, { id : 7, image : placeHolder } ]
 
-  const header = () =>
+  const renderItems = ( {items} ) =>
   (
-    <Text className='text-white text-3xl'>Header</Text>
+      <View>
+        <Image 
+          source={placeHolder}
+          className='h-[50px]'
+        />
+      </View>
   )
 
   return (
-    <SafeAreaView className='bg-black h-full w-full'>
+    
+    <SafeAreaView>
+
       <Header />
-      <FlatList 
+
+      <FlatList
         data={data}
         renderItem={renderItems}
-        className='m-4'
-        ListHeaderComponent={header}
-        ListFooterComponent={footer}
       />
 
     </SafeAreaView>
+
   )
 }
 
-export default spotDetails
+export default productDetails
