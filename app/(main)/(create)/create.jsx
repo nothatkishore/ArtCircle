@@ -22,7 +22,7 @@ const create = () => {
 
 <Card
   BigText='Add Members'
-  SmallText='You can new members'
+  SmallText='You can aadd new members'
   PATH='addMember'
 />
 

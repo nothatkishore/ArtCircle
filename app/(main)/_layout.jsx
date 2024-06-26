@@ -108,7 +108,7 @@ const MainLayout = () => {
         />
 
         <Tabs.Screen
-          name='payments'
+          name='(payments)'
           options=
           {
             {

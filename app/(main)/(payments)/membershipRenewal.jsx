@@ -1,17 +1,17 @@
-import { View, Text } from 'react-native'
+import {Text, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Header from '../../../components/Header'
 
-const spotDetails = () => {
+const membershipRenewal = () => {
   return (
     <SafeAreaView>
       <Header/>
     <View>
-      <Text>spotDetails</Text>
+      {/* <Text>membershipRenewal</Text> */}
     </View>
     </SafeAreaView>
   )
 }
 
-export default spotDetails
+export default membershipRenewal

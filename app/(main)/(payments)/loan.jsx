@@ -1,17 +1,18 @@
-import { View, Text } from 'react-native'
+import {Text, View } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Header from '../../../components/Header'
 
-const spotDetails = () => {
+const loan = () => {
   return (
     <SafeAreaView>
       <Header/>
-    <View>
-      <Text>spotDetails</Text>
+       <View className="text-center justify-items-center">
+      {/* <Text className="text-center">loan</Text> */}
     </View>
     </SafeAreaView>
+   
   )
 }
 
-export default spotDetails
+export default loan
