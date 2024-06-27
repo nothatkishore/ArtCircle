@@ -8,7 +8,7 @@ import TypingText from '../components/TypingText';
 
 const app = () => 
 {
-  const [test, settest] = useState(true)
+  const [test, settest] = useState(false)
 
   if (test) {
     return <Redirect href='/home' />;
@@ -73,7 +73,7 @@ const app = () =>
           <TouchableOpacity
             className='bg-orange-600 p-[10px] rounded-full'
             activeOpacity={0.9}
-            onPress={() => router.push('/signIn')}
+            onPress={() => router.push('/home')}
           >
             <Text className='text-center text-2xl font-normal text-white'>
               Login
