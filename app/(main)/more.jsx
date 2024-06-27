@@ -7,6 +7,13 @@ import user from '../../assets/icons/user.png'
 import setP from '../../assets/icons/setP.png'
 import project from '../../assets/icons/project.png'
 import publishPost from '../../assets/icons/publishPost.png'
+import productDetails from '../../assets/icons/productDetails.png'
+import map from '../../assets/icons/map.png'
+import searchProducts from '../../assets/icons/searchProducts.png'
+import spotDetails from '../../assets/icons/spotDetails.png'
+import loan from '../../assets/icons/loan.png'
+import renewal from '../../assets/icons/renewal.png'
+import payments from '../../assets/icons/payments.png'
 import { Link, router } from "expo-router";
 
 const more = () => {
@@ -82,7 +89,7 @@ const more = () => {
         >
         <View className="w-ful  mt-5 flex-row justify-center items-center px-10  bg-white">
           <Image
-          source={publishPost}
+          source={productDetails}
           className="w-7 h-7"
           resizeMode="contain"
           />
@@ -96,7 +103,7 @@ const more = () => {
         >
         <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
           <Image
-          source={publishPost}
+          source={map}
           className="w-7 h-7"
           resizeMode="contain"
           />
@@ -110,7 +117,7 @@ const more = () => {
         >
         <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
           <Image
-          source={publishPost}
+          source={searchProducts}
           className="w-7 h-7"
           resizeMode="contain"
           />
@@ -123,12 +130,12 @@ const more = () => {
         onPress={()=> router.push('/spotDetails')}>
         <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
           <Image
-          source={publishPost}
+          source={spotDetails}
           className="w-7 h-7"
           resizeMode="contain"
           />
           <Text className="w-full pt-5 pb-5 px-5 text-lg">
-          Spot Products</Text>
+          Spot Details</Text>
         </View>
         </TouchableOpacity>
 
@@ -137,7 +144,7 @@ const more = () => {
         >
         <View className="w-ful  mt-5 flex-row justify-center items-center px-10  bg-white">
           <Image
-          source={publishPost}
+          source={loan}
           className="w-7 h-7"
           resizeMode="contain"
           />
@@ -151,7 +158,7 @@ const more = () => {
         >
         <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
           <Image
-          source={publishPost}
+          source={renewal}
           className="w-7 h-7"
           resizeMode="contain"
           />
@@ -165,7 +172,7 @@ const more = () => {
         >
         <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
           <Image
-          source={publishPost}
+          source={payments}
           className="w-7 h-7"
           resizeMode="contain"
           />
