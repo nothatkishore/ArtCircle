@@ -15,170 +15,172 @@ import loan from '../../assets/icons/loan.png'
 import renewal from '../../assets/icons/renewal.png'
 import payments from '../../assets/icons/payments.png'
 import { Link, router } from "expo-router";
+import { useState } from "react"; 
 
-const more = () => {
+
+const more = () => 
+{
+  const [Visible, setVisible] = useState(true)
   return (
-    <SafeAreaView className="bg-slate-300">
+    <SafeAreaView className='h-full w-full'>
+      <View className="w-full h-auto bg-[#ffa629]">
+        <Text className="color-white text-left text-2xl p-4 font-base">
+          More
+        </Text>
+      </View>
       <ScrollView>
 
-
-        <View className="w-full h-14 bg-[#ff9b0f]">
-          <Text className="color-white text-left mx-5 text-xl pt-4 text-opacity-40 font-extrabold">
-            More
-          </Text>
-        </View>
-
         <TouchableOpacity
-        onPress={()=> router.push('/addMember')}
+          onPress={() => router.push('/addMember')}
         >
-        <View className="w-full  mt-4 flex-row justify-center items-center px-10  bg-white">
-          <Image
-          source={user}
-          className="w-7 h-7"
-          resizeMode="contain"
-          />
-          <Text className="w-full pt-5 pb-5 px-5 text-lg">
-          Add Members</Text>
-        </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity 
-        onPress={()=> router.push('/addSetprops')}
-        >
-        <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
-          <Image
-          source={setP}
-          className="w-7 h-7"
-          resizeMode="contain"
-          />
-          <Text className="w-full pt-5 pb-5 px-5 text-lg">
-          Add Setproperties</Text>
-        </View>
+          <View className="w-full  mt-4 flex-row justify-center items-center px-10  bg-white">
+            <Image
+              source={user}
+              className="w-7 h-7"
+              resizeMode="contain"
+            />
+            <Text className="w-full pt-5 pb-5 px-5 text-lg">
+              Add Members</Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity
-        onPress={()=>router.push('/addMovies')}
+          onPress={() => router.push('/addSetprops')}
         >
-        <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
-          <Image
-          source={project}
-          className="w-7 h-7"
-          resizeMode="contain"
-          />
-          <Text className="w-full pt-5 pb-5 px-5 text-lg">
-          Add Project</Text>
-        </View>
+          <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
+            <Image
+              source={setP}
+              className="w-7 h-7"
+              resizeMode="contain"
+            />
+            <Text className="w-full pt-5 pb-5 px-5 text-lg">
+              Add Setproperties</Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity
-        onPress={()=> router.push('/write')}
+          onPress={() => router.push('/addMovies')}
         >
-        <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
-          <Image
-          source={publishPost}
-          className="w-7 h-7"
-          resizeMode="contain"
-          />
-          <Text className="w-full pt-5 pb-5 px-5 text-lg">
-          Publish Post</Text>
-        </View>
+          <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
+            <Image
+              source={project}
+              className="w-7 h-7"
+              resizeMode="contain"
+            />
+            <Text className="w-full pt-5 pb-5 px-5 text-lg">
+              Add Project</Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity
-        onPress={()=> router.push('/productDetails')}
+          onPress={() => router.push('/write')}
         >
-        <View className="w-ful  mt-5 flex-row justify-center items-center px-10  bg-white">
-          <Image
-          source={productDetails}
-          className="w-7 h-7"
-          resizeMode="contain"
-          />
-          <Text className="w-full pt-5 pb-5 px-5 text-lg">
-          Product Details</Text>
-        </View>
+          <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
+            <Image
+              source={publishPost}
+              className="w-7 h-7"
+              resizeMode="contain"
+            />
+            <Text className="w-full pt-5 pb-5 px-5 text-lg">
+              Publish Post</Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity
-        onPress={()=> router.push('/searchLocation')}
+          onPress={() => router.push('/productDetails')}
         >
-        <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
-          <Image
-          source={map}
-          className="w-7 h-7"
-          resizeMode="contain"
-          />
-          <Text className="w-full pt-5 pb-5 px-5 text-lg">
-          Search Location</Text>
-        </View>
+          <View className="w-ful  mt-5 flex-row justify-center items-center px-10  bg-white">
+            <Image
+              source={productDetails}
+              className="w-7 h-7"
+              resizeMode="contain"
+            />
+            <Text className="w-full pt-5 pb-5 px-5 text-lg">
+              Product Details</Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity
-        onPress={()=> router.push('/searchProducts')}
+          onPress={() => router.push('/searchLocation')}
         >
-        <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
-          <Image
-          source={searchProducts}
-          className="w-7 h-7"
-          resizeMode="contain"
-          />
-          <Text className="w-full pt-5 pb-5 px-5 text-lg">
-          Search Products</Text>
-        </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity 
-        onPress={()=> router.push('/spotDetails')}>
-        <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
-          <Image
-          source={spotDetails}
-          className="w-7 h-7"
-          resizeMode="contain"
-          />
-          <Text className="w-full pt-5 pb-5 px-5 text-lg">
-          Spot Details</Text>
-        </View>
+          <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
+            <Image
+              source={map}
+              className="w-7 h-7"
+              resizeMode="contain"
+            />
+            <Text className="w-full pt-5 pb-5 px-5 text-lg">
+              Search Location</Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity
-        onPress={()=> router.push('/loan')}
+          onPress={() => router.push('/searchProducts')}
         >
-        <View className="w-ful  mt-5 flex-row justify-center items-center px-10  bg-white">
-          <Image
-          source={loan}
-          className="w-7 h-7"
-          resizeMode="contain"
-          />
-          <Text className="w-full pt-5 pb-5 px-5 text-lg">
-          Loan</Text>
-        </View>
+          <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
+            <Image
+              source={searchProducts}
+              className="w-7 h-7"
+              resizeMode="contain"
+            />
+            <Text className="w-full pt-5 pb-5 px-5 text-lg">
+              Search Products</Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity
-        onPress={()=> router.push('/membershipRenewal')}
-        >
-        <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
-          <Image
-          source={renewal}
-          className="w-7 h-7"
-          resizeMode="contain"
-          />
-          <Text className="w-full pt-5 pb-5 px-5 text-lg">
-         Membership Renewal</Text>
-        </View>
+          onPress={() => router.push('/spotDetails')}>
+          <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
+            <Image
+              source={spotDetails}
+              className="w-7 h-7"
+              resizeMode="contain"
+            />
+            <Text className="w-full pt-5 pb-5 px-5 text-lg">
+              Spot Details</Text>
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity
-        onPress={()=> router.push('/workPayments')}
+          onPress={() => router.push('/loan')}
         >
-        <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
-          <Image
-          source={payments}
-          className="w-7 h-7"
-          resizeMode="contain"
-          />
-          <Text className="w-full pt-5 pb-5 px-5 text-lg">
-          Work Payments</Text>
-        </View>
+          <View className="w-ful  mt-5 flex-row justify-center items-center px-10  bg-white">
+            <Image
+              source={loan}
+              className="w-7 h-7"
+              resizeMode="contain"
+            />
+            <Text className="w-full pt-5 pb-5 px-5 text-lg">
+              Loan</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => router.push('/membershipRenewal')}
+        >
+          <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
+            <Image
+              source={renewal}
+              className="w-7 h-7"
+              resizeMode="contain"
+            />
+            <Text className="w-full pt-5 pb-5 px-5 text-lg">
+              Membership Renewal</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => router.push('/workPayments')}
+        >
+          <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
+            <Image
+              source={payments}
+              className="w-7 h-7"
+              resizeMode="contain"
+            />
+            <Text className="w-full pt-5 pb-5 px-5 text-lg">
+              Work Payments</Text>
+          </View>
         </TouchableOpacity>
 
 

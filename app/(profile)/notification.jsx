@@ -4,10 +4,10 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 const notification = () => {
   return (
-    <SafeAreaView className='bg-black h-full w-full items-center justify-center'>
-      <Text className='text-white'>
-        No Notifications
-      </Text>
+    <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
+      <View className='h-auto bg-[#ffa629] w-full p-4 items-center'>
+        <Text className='text-white text-xl font-light'>Notification center</Text>
+      </View>
     </SafeAreaView>
   )
 }

@@ -12,7 +12,7 @@ const RootLayout = () =>
                 <Stack.Screen name="(main)" options={{headerShown : false}} />
                 <Stack.Screen name="(profile)" options={{headerShown : false}} />
             </Stack>
-            <StatusBar style="light" />
+            <StatusBar style="light" backgroundColor="#ffa629"/>
         </>
 
     )

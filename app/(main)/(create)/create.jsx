@@ -16,7 +16,7 @@ const create = () => {
     <>
       <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
         <Header />
-        <ScrollView>
+        <ScrollView className='h-full w-full'>
           <View className='h-full w-full'>
 
           <ClickOption 

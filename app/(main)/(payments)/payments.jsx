@@ -2,7 +2,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../../components/Header";
 import { View, Text, ScrollView } from "react-native";
 import ClickOption from "../../../components/ClickOption";
-import placeHolder from '../../../assets/icons/setP.png'
+import renew from '../../../assets/icons/renewal.png'
+import loan from '../../../assets/icons/loan.png'
+import payment from '../../../assets/icons/payments.png'
 import { router } from "expo-router";
 
 const payments = () => {
@@ -14,17 +16,17 @@ const payments = () => {
           <View className="w-full h-full">
             <ClickOption
               name='Membership renewal'
-              icon={placeHolder}
+              icon={renew}
               handlePress={() => router.push('/membershipRenewal')}
             />
             <ClickOption
               name='Project commission'
-              icon={placeHolder}
+              icon={payment}
               handlePress={() => router.push('/workPayments')}
             />
             <ClickOption
               name='Loan details'
-              icon={placeHolder}
+              icon={loan}
               handlePress={() => router.push('/loan')}
             />
           </View>
