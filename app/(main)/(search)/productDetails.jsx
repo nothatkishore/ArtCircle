@@ -1,38 +1,51 @@
-import { View, Text, Image, FlatList } from 'react-native'
-import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import Header from '../../../components/Header'
-import placeHolder from '../../../assets/images/placeHolder.jpg'
+import { View, Text, Image, FlatList, Dimensions, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import sample from '../../../assets/images/placeHolder.jpg';
+import Header from '../../../components/Header';
+import { router } from 'expo-router';
 
-const productDetails = () => 
-{
+const ProductDetails = () => {
+  const data = [
+    { id: 1, description: 'Product Name', image: sample },
+    { id: 2, description: 'Product Name', image: sample },
+    { id: 3, description: 'Product Name', image: sample },
+    { id: 4, description: 'Product Name can of any length', image: sample },
+    { id: 5, description: 'Product Name', image: sample },
+    { id: 6, description: 'Product Name', image: sample }
+  ];
 
-  const data = [ { id : 1, image : placeHolder }, { id : 2, image : placeHolder }, { id : 3, image : placeHolder }, { id : 4, image : placeHolder }, { id : 5, image : placeHolder }, { id : 6, image : placeHolder }, { id : 7, image : placeHolder } ]
-
-  const renderItems = ( {items} ) =>
-  (
-      <View>
-        <Image 
-          source={placeHolder}
-          className='h-[50px]'
-        />
+  const renderItems = ({ item }) => (
+    <TouchableOpacity
+      onPress={() => router.push('/productSpecs')}
+      activeOpacity={0.7}
+    >
+        <View className='mb-5 flex-row items-center p-4 h-48 bg-slate-50 shadow-2xl rounded-lg justify-around'>
+        <View>
+          <Image
+            source={item.image}
+            className='h-36 w-36 rounded-2xl'
+            resizeMode='cover'
+          />
+        </View>
+        <View className='h-36 w-36 ml-7'>
+          <Text className='text-base mb-2 font-medium'>{item.description}</Text>
+          <Text className='text-xs'>This is a sample description of the product. This contains detailed description of the product</Text>
+        </View>
       </View>
-  )
+    </TouchableOpacity>
+  );
 
   return (
-    
-    <SafeAreaView>
-
+    <SafeAreaView className="flex-1 bg-[#f0f3f6]">
       <Header />
-
       <FlatList
         data={data}
         renderItem={renderItems}
+        className='m-5'
       />
-
     </SafeAreaView>
+  );
+};
 
-  )
-}
-
-export default productDetails
+export default ProductDetails;

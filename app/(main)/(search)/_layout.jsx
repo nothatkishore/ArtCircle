@@ -10,6 +10,7 @@ const SearchLayout = () =>
             <Stack.Screen name="searchProducts" options={{headerShown : false}} />
             <Stack.Screen name="spotDetails" options={{headerShown : false}} />
             <Stack.Screen name="productDetails" options={{headerShown : false}} />
+            <Stack.Screen name="productSpecs" options={{headerShown : false}} />
 
         </Stack>
     )

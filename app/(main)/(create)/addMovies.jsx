@@ -22,16 +22,16 @@ const addMovies = () => {
     })
 
   return (
-    <SafeAreaView className='bg-black h-full w-full'>
+    <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
       <Header />
-      <Text className='text-white text-center text-2xl font-light pb-2'>
+      <Text className='text-black text-center text-2xl font-light pb-2'>
         Add Project details
       </Text>
       <ScrollView className='h-full w-full'>
 
         <View className='m-3'>
-          <Text className='text-white'>Project name:</Text>
-          <View className='mt-2 bg-gray-50 rounded-xl'>
+          <Text className='text-black'>Project name:</Text>
+          <View className='mt-2 bg-gray-50 rounded-xl border'>
             <TextInput
               className='p-2'
               placeholder='Project name'
@@ -42,8 +42,8 @@ const addMovies = () => {
         </View>
 
         <View className='m-3'>
-          <Text className='text-white'>Project type:</Text>
-          <View className='bg-white rounded-xl mt-2'>
+          <Text className='text-black'>Project type:</Text>
+          <View className='bg-white rounded-xl mt-2 border'>
             <Picker
               selectedValue={form.projecType}
               onValueChange={(value, index) => setform({ ...form, projecType: value })}
@@ -57,8 +57,8 @@ const addMovies = () => {
         </View>
 
         <View className='m-3'>
-          <Text className='text-white'>Designation:</Text>
-          <View className='bg-white rounded-xl mt-2'>
+          <Text className='text-black'>Designation:</Text>
+          <View className='bg-white rounded-xl mt-2 border'>
             <Picker
               selectedValue={form.designation}
               onValueChange={(value, index) => setform({ ...form, designation: value })}
@@ -71,8 +71,8 @@ const addMovies = () => {
         </View>
 
         <View className='m-3'>
-          <Text className='text-white'>Production name:</Text>
-          <View className='mt-2 bg-gray-50 rounded-xl'>
+          <Text className='text-black'>Production name:</Text>
+          <View className='mt-2 bg-gray-50 rounded-xl border'>
             <TextInput
               className='p-2'
               placeholder='Production name'
@@ -83,8 +83,8 @@ const addMovies = () => {
         </View>
 
         <View className='m-3'>
-          <Text className='text-white'>Producer name:</Text>
-          <View className='mt-2 bg-gray-50 rounded-xl'>
+          <Text className='text-black'>Producer name:</Text>
+          <View className='mt-2 bg-gray-50 rounded-xl border'>
             <TextInput
               className='p-2'
               placeholder='Producer name'
@@ -95,8 +95,8 @@ const addMovies = () => {
         </View>
 
         <View className='m-3'>
-          <Text className='text-white'>Director name:</Text>
-          <View className='mt-2 bg-gray-50 rounded-xl'>
+          <Text className='text-black'>Director name:</Text>
+          <View className='mt-2 bg-gray-50 rounded-xl border'>
             <TextInput
               className='p-2'
               placeholder='Director name'
@@ -107,8 +107,8 @@ const addMovies = () => {
         </View>
 
         <View className='m-3'>
-          <Text className='text-white'>Salary:</Text>
-          <View className='mt-2 bg-gray-50 rounded-xl'>
+          <Text className='text-black'>Salary:</Text>
+          <View className='mt-2 bg-gray-50 rounded-xl border'>
             <TextInput
               className='p-2'
               placeholder='Salary'
@@ -119,11 +119,11 @@ const addMovies = () => {
           </View>
         </View>
 
-        <View className='my-10 bg-orange-600 mx-3 p-2 rounded-xl'>
+        <View className='my-10 bg-orange-600 mx-3 p-2 rounded-xl border'>
           <TouchableOpacity
             activeOpacity={0.7}
           >
-            <Text className='text-white text-center'>
+            <Text className='text-black text-center'>
                 Add Project
             </Text>
           </TouchableOpacity>

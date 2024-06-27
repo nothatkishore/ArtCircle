@@ -19,16 +19,16 @@ const addMovies = () => {
         })
 
     return (
-        <SafeAreaView className='bg-black h-full w-full'>
+        <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
             <Header />
-            <Text className='text-white text-center text-2xl font-light pb-2'>
+            <Text className='text-black text-center text-2xl font-light pb-2'>
                 Add Pictures
             </Text>
             <ScrollView className='h-full w-full'>
 
                 <View className='m-3'>
-                    <Text className='text-white'>Upload pictures</Text>
-                    <View className='mt-2 items-center'>
+                    <Text className='text-black'>Upload pictures</Text>
+                    <View className='mt-2 items-center border p-4 rounded-lg'>
                         <TouchableOpacity
                             activeOpacity={0.7}
                         >
@@ -42,8 +42,8 @@ const addMovies = () => {
                 </View>
 
                 <View className='m-3'>
-                    <Text className='text-white'>Movie name:</Text>
-                    <View className='bg-white rounded-xl mt-2'>
+                    <Text className='text-black'>Movie name:</Text>
+                    <View className='bg-white rounded-xl mt-2 border'>
                         <Picker
                             selectedValue={form.movieName}
                             onValueChange={(value, index) => setform({ ...form, movieName: value })}
