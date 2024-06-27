@@ -8,12 +8,14 @@ import search from '../../../assets/icons/searchLocation.png'
 
 const searchLocation = () => 
 {
-  const data = [{ name : "Kishore", role : "Software Engineer" }, { name : "John", role : "Doctor" }, { name : "John", role : "Doctor" }, { name : "John", role : "Doctor" }, { name : "John", role : "Doctor" }, { name : "John", role : "Doctor" }, { name : "John", role : "Doctor" }, { name : "John", role : "Doctor" }]
+  const data = [{ name : "Spot Name", role : "Location" }, { name : "Spot Name can be long too", role : "Location" }, { name : "Spot Name can be long too", role : "Location" }, { name : "Spot Name can be long too", role : "Location" }, { name : "Spot Name can be long too", role : "Location" }, { name : "Spot Name can be long too", role : "Location" }, { name : "Spot Name can be long too", role : "Location" }, { name : "Spot Name can be long too", role : "Location" }]
   const renderItems = ({ item }) => (
     <Card 
       BigText = {item.name}
       SmallText = {item.role}
+      xSmallText='Location link'
       PATH='spotDetails'
+      flag = {true}
     />
   )
 

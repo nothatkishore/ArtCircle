@@ -26,15 +26,15 @@ const addMember = () => {
     })
 
   return (
-    <SafeAreaView className='bg-black h-full w-full'>
+    <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
       <Header />
-      <Text className='text-white text-center text-2xl font-light pb-2'>
+      <Text className='text-black text-center text-2xl font-light pb-2'>
         Add Member details
       </Text>
       <ScrollView className='h-full w-full'>
         <View className='m-3'>
-          <Text className='text-white'>Profile picture</Text>
-          <View className='mt-2 items-center'>
+          <Text className='text-black'>Profile picture</Text>
+          <View className='mt-2 items-center border rounded-xl p-2'>
             <TouchableOpacity
               activeOpacity={0.7}
             >
@@ -48,8 +48,8 @@ const addMember = () => {
         </View>
 
         <View className='m-3'>
-          <Text className='text-white'>First name:</Text>
-          <View className='mt-2 bg-gray-50 rounded-xl'>
+          <Text className='text-black'>First name:</Text>
+          <View className='mt-2 bg-gray-50 rounded-xl border'>
             <TextInput
               className='p-2'
               placeholder='First name'
@@ -60,8 +60,8 @@ const addMember = () => {
         </View>
 
         <View className='m-3'>
-          <Text className='text-white'>Last name:</Text>
-          <View className='mt-2 bg-gray-50 rounded-xl'>
+          <Text className='text-black'>Last name:</Text>
+          <View className='mt-2 bg-gray-50 rounded-xl border'>
             <TextInput
               className='p-2'
               placeholder='Last name'
@@ -72,8 +72,8 @@ const addMember = () => {
         </View>
 
         <View className='m-3'>
-          <Text className='text-white'>Position:</Text>
-          <View className='bg-white rounded-xl mt-2'>
+          <Text className='text-black'>Position:</Text>
+          <View className='bg-white rounded-xl mt-2 border'>
             <Picker
               selectedValue={form.position}
               onValueChange={(value, index) => setform({ ...form, position: value })}
@@ -86,8 +86,8 @@ const addMember = () => {
         </View>
 
         <View className='m-3'>
-          <Text className='text-white'>Industry:</Text>
-          <View className='bg-white rounded-xl mt-2'>
+          <Text className='text-black'>Industry:</Text>
+          <View className='bg-white rounded-xl mt-2 border'>
             <Picker
               selectedValue={form.industry}
               onValueChange={(value, index) => setform({ ...form, industry: value })}
@@ -102,8 +102,8 @@ const addMember = () => {
 
 
         <View className='m-3'>
-          <Text className='text-white'>Phone number:</Text>
-          <View className='mt-2 bg-gray-50 rounded-xl'>
+          <Text className='text-black'>Phone number:</Text>
+          <View className='mt-2 bg-gray-50 rounded-xl border'>
             <TextInput
               className='p-2'
               placeholder='Phone number'
@@ -115,8 +115,8 @@ const addMember = () => {
         </View>
 
         <View className='m-3'>
-          <Text className='text-white'>Email Address:</Text>
-          <View className='mt-2 bg-gray-50 rounded-xl'>
+          <Text className='text-black'>Email Address:</Text>
+          <View className='mt-2 bg-gray-50 rounded-xl border'>
             <TextInput
               className='p-2'
               placeholder='Email address'
@@ -127,8 +127,8 @@ const addMember = () => {
         </View>
 
         <View className='m-3'>
-          <Text className='text-white'>Blood group:</Text>
-          <View className='bg-white rounded-xl mt-2'>
+          <Text className='text-black'>Blood group:</Text>
+          <View className='bg-white rounded-xl mt-2 border'>
             <Picker
               selectedValue={form.bloodGroup}
               onValueChange={(value, index) => setform({ ...form, bloodGroup: value })}
@@ -146,8 +146,8 @@ const addMember = () => {
         </View>
 
         <View className='m-3'>
-          <Text className='text-white'>Aadhar number:</Text>
-          <View className='mt-2 bg-gray-50 rounded-xl'>
+          <Text className='text-black'>Aadhar number:</Text>
+          <View className='mt-2 bg-gray-50 rounded-xl border'>
             <TextInput
               className='p-2'
               placeholder='Aadhar number'

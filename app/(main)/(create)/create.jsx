@@ -6,52 +6,48 @@ import { StatusBar } from 'expo-status-bar'
 import Header from '../../../components/Header'
 import ClickOption from '../../../components/ClickOption'
 import addM from '../../../assets/icons/addM.png'
+import movie from '../../../assets/icons/movie.png'
 import setP from '../../../assets/icons/setP.png'
 import write from '../../../assets/icons/write.png'
-import movie from '../../../assets/icons/movie.png'
-import Card from '../../../components/Card'
+
 
 const create = () => {
   return (
     <>
-      <SafeAreaView className='bg-black h-full w-full'>
-
+      <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
         <Header />
         <ScrollView>
-        <View className='h-full w-full p-5'>
+          <View className='h-full w-full'>
 
-<Card
-  BigText='Add Members'
-  SmallText='You can aadd new members'
-  PATH='addMember'
-/>
+          <ClickOption 
+              name='Add Members'
+              icon={addM}
+              handlePress={() => router.push('/addMember')}
+          />
 
-<Card
-  BigText='Add Setproperties'
-  SmallText='Post set pictures'
-  PATH='addSetprops'
-/>
+          <ClickOption 
+              name='Add Project'
+              icon={movie}
+              handlePress={() => router.push('/addMovies')}
+          />
 
-<Card
-  BigText='Add Project'
-  SmallText='Tell us about your new movie'
-  PATH='addMovies'
-/>
+          <ClickOption 
+              name='Post Pictures'
+              icon={setP}
+              handlePress={() => router.push('/addSetprops')}
+          />
 
-<Card
-  BigText='Publish post'
-  SmallText='Write about your work'
-  PATH='write'
-/>
+          <ClickOption 
+              name='Post Blog'
+              icon={write}
+              handlePress={() => router.push('/write')}
+          />
+      
 
-</View>
-
+          </View>
         </ScrollView>
-
-       
-
       </SafeAreaView>
-      <StatusBar style='light' />
+      <StatusBar style='light' backgroundColor='#ffa629' />
     </>
   )
 }

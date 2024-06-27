@@ -19,16 +19,16 @@ const addMovies = () => {
         })
 
     return (
-        <SafeAreaView className='bg-black h-full w-full'>
+        <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
             <Header />
-            <Text className='text-white text-center text-2xl font-light pb-2'>
+            <Text className='text-black text-center text-2xl font-light pb-2'>
                 Write content
             </Text>
             <ScrollView className='h-full w-full'>
 
                 <View className='m-3'>
-                    <Text className='text-white'>Movie name:</Text>
-                    <View className='bg-white rounded-xl mt-2'>
+                    <Text className='text-black'>Movie name:</Text>
+                    <View className='bg-white rounded-xl mt-2 border'>
                         <Picker
                             selectedValue={form.movieName}
                             onValueChange={(value, index) => setform({ ...form, movieName: value })}
@@ -42,11 +42,11 @@ const addMovies = () => {
                 </View>
 
                 <View className='m-3'>
-                    <Text className='text-white'>Write about your work:</Text>
-                    <View className='mt-2 bg-gray-50 rounded-xl'>
+                    <Text className='text-black'>Write about your work:</Text>
+                    <View className='mt-2 bg-gray-50 rounded-xl border'>
                         <TextInput
                             className='p-2 text-left items-start'
-                            style={{textAlignVertical : 'top'}}
+                            style={{ textAlignVertical: 'top' }}
                             placeholder='Write about your work'
                             value={form.yourData}
                             numberOfLines={8}
