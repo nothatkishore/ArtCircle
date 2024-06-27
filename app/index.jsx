@@ -11,7 +11,7 @@ const app = () =>
   const [test, settest] = useState(true)
 
   if (test) {
-    return <Redirect href='/more' />;
+    return <Redirect href='/home' />;
   }
 
 
