@@ -17,7 +17,6 @@ import payments from '../../assets/icons/payments.png'
 import { Link, router } from "expo-router";
 import { useState } from "react"; 
 
-
 const more = () => 
 {
   const [Visible, setVisible] = useState(true)
