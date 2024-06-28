@@ -8,11 +8,12 @@ import TypingText from '../components/TypingText';
 
 const app = () => 
 {
-  const [test, settest] = useState(false)
+  const [test, settest] = useState(true)
 
   if (test) {
-    return <Redirect href='/home' />;
+    return <Redirect href='/profile' />;
   }
+
 
   const fadeAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
   const buttonAnim = useRef(new Animated.Value(0)).current; // Initial value for scale: 0
