@@ -14,11 +14,9 @@ const app = () =>
     return <Redirect href='/home' />;
   }
 
-
   const fadeAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
   const buttonAnim = useRef(new Animated.Value(0)).current; // Initial value for scale: 0
   const [Login, setLogin] = useState(true)
-
 
   useEffect(() => {
     // Chaining the logo fade-in, text animation delay, and button bounce animations
