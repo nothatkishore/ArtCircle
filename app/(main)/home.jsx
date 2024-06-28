@@ -166,6 +166,90 @@ const payments = [
   },
 ]
 
+const recentLocation = [
+  {
+    id: "1",
+    title: "Upcoming Events",
+    subTitle: "Art Director Annual Meet 2024-2025",
+    date: "July 10, 2024",
+    image:
+      "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
+  },
+  {
+    id: "2",
+    title: "Upcoming Events",
+    subTitle: "Art Director Annual Meet 2024-2025",
+    date: "July 15, 2024",
+    image:
+      "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
+  },
+  {
+    id: "3",
+    title: "Upcoming Events",
+    subTitle: "Art Director Annual Meet 2024-2025",
+    date: "July 15, 2024",
+    image:
+      "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
+  },
+  {
+    id: "4",
+    title: "Upcoming Events",
+    subTitle: "Art Director Annual Meet 2024-2025",
+    date: "July 15, 2024",
+    image:
+      "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
+  },
+  {
+    id: "5",
+    title: "Upcoming Events",
+    subTitle: "Art Director Annual Meet 2024-2025",
+    date: "July 15, 2024",
+    image:
+      "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
+  },
+  {
+    id: "6",
+    title: "Upcoming Events",
+    subTitle: "Art Director Annual Meet 2024-2025",
+    date: "July 15, 2024",
+    image:
+      "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
+  },
+  {
+    id: "7",
+    title: "Upcoming Events",
+    subTitle: "Art Director Annual Meet 2024-2025",
+    date: "July 15, 2024",
+    image:
+      "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
+  },
+  {
+    id: "8",
+    title: "Upcoming Events",
+    subTitle: "Art Director Annual Meet 2024-2025",
+    date: "July 15, 2024",
+    image:
+      "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
+  },
+  {
+    id: "9",
+    title: "Upcoming Events",
+    subTitle: "Art Director Annual Meet 2024-2025",
+    date: "July 15, 2024",
+    image:
+      "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
+  },
+  {
+    id: "10",
+    title: "Upcoming Events",
+    subTitle: "Art Director Annual Meet 2024-2025",
+    date: "July 15, 2024",
+    image:
+      "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
+  },
+  // Add more events here
+];
+
 const home = () => {
   return (
     <SafeAreaView className="h-full w-full">
@@ -215,6 +299,27 @@ const home = () => {
                     <Text style={styles.title}>{item.movieName}</Text>
                     <Text style={styles.subTitle}>{item.amountReceived}</Text>
                     <Text style={styles.subTitle}>{item.amountPaidForAssociation}</Text>
+                    <Text style={styles.date}>{item.date}</Text>
+                  </Card>
+                )}
+              />
+            </View>
+            <View className="p-5 w-full rounded-xl my-2 bg-slate-50 shadow-lg shadow-orange-400  flex-row justify-between items-center">
+              <Text className="items-center text-center w-full  text-2xl ">
+                Recent Locations
+              </Text>
+            </View>
+            <View className="w-full"style={styles.container}>
+              <FlatList
+                data={recentLocation}
+                keyExtractor={(item) => item.id}
+                horizontal
+                pagingEnabled
+                renderItem={({ item }) => (
+                  <Card>
+                    <Image source={{ uri: item.image }} style={styles.image} />
+                    <Text style={styles.title}>{item.title}</Text>
+                    <Text style={styles.subTitle}>{item.subTitle}</Text>
                     <Text style={styles.date}>{item.date}</Text>
                   </Card>
                 )}
