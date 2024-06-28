@@ -16,7 +16,7 @@ const profile = () => {
             contact: '9840287145'
         })
 
-    const [edit, setEdit] = useState(true)
+    const [edit, setEdit] = useState(false)
 
     return (
         <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
@@ -78,7 +78,7 @@ const profile = () => {
                 >
                     <View className='m-3 rounded-lg bg-[#ffa629]'>
                         <Text className='p-3 text-white text-base font-medium text-center'>
-                            {edit ? 'Save changes' : 'Edit changes'}
+                            {edit ? 'Save changes' : 'Edit profile'}
                         </Text>
                     </View>
                 </TouchableOpacity>
@@ -103,3 +103,12 @@ const profile = () => {
 }
 
 export default profile
+
+// Image upload functionality
+// Click to Zoom functionality
+// Custom page navigation
+
+
+// Search functionality
+// useRef and useContext
+// Redux implementation
