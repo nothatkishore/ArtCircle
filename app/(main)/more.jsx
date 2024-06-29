@@ -14,7 +14,7 @@ import spotDetails from '../../assets/icons/spotDetails.png'
 import loan from '../../assets/icons/loan.png'
 import renewal from '../../assets/icons/renewal.png'
 import payments from '../../assets/icons/payments.png'
-import { Link, router } from "expo-router";
+import { router } from "expo-router";
 import { useState } from "react"; 
 
 const more = () => 

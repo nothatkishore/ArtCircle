@@ -9,9 +9,7 @@ import {
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../components/Header";
-import { StatusBar } from "expo-status-bar";
 import { Card } from "react-native-elements";
-import loan from "../../assets/icons/loan.png";
 
 const events = [
   {
@@ -99,70 +97,70 @@ const events = [
 
 const payments = [
   {
-    id:"1",
-    artDirectorName:"Name : Stacksnova",
-    artDirectorId:"ID No :123",
-    movieName:"Movie Name - Leo",
+    id: "1",
+    artDirectorName: "Name : Stacksnova",
+    artDirectorId: "ID No :123",
+    movieName: "Movie Name - Leo",
     amountReceived: "Amount Received - 5,00,000",
-    amountPaidForAssociation : "Amount Paid For Associaion - 100000",
+    amountPaidForAssociation: "Amount Paid For Associaion - 100000",
     image:
       "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
-    date: "June 22, 2024" 
+    date: "June 22, 2024"
   },
   {
-    id:"2",
-    artDirectorName:"Name : Stacksnova",
-    artDirectorId:"ID No :123",
-    movieName:"Movie Name - Leo",
+    id: "2",
+    artDirectorName: "Name : Stacksnova",
+    artDirectorId: "ID No :123",
+    movieName: "Movie Name - Leo",
     amountReceived: "Amount Received - 5,00,000",
-    amountPaidForAssociation : "Amount Paid For Associaion - 100000",
+    amountPaidForAssociation: "Amount Paid For Associaion - 100000",
     image:
       "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
-    date: "June 22, 2024" 
+    date: "June 22, 2024"
   },
   {
-    id:"3",
-    artDirectorName:"Name : Stacksnova",
-    artDirectorId:"ID No :123",
-    movieName:"Movie Name - Leo",
+    id: "3",
+    artDirectorName: "Name : Stacksnova",
+    artDirectorId: "ID No :123",
+    movieName: "Movie Name - Leo",
     amountReceived: "Amount Received - 5,00,000",
-    amountPaidForAssociation : "Amount Paid For Associaion - 100000",
+    amountPaidForAssociation: "Amount Paid For Associaion - 100000",
     image:
       "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
-    date: "June 22, 2024" 
+    date: "June 22, 2024"
   },
   {
-    id:"4",
-    artDirectorName:"Name : Stacksnova",
-    artDirectorId:"ID No :123",
-    movieName:"Movie Name - Leo",
+    id: "4",
+    artDirectorName: "Name : Stacksnova",
+    artDirectorId: "ID No :123",
+    movieName: "Movie Name - Leo",
     amountReceived: "Amount Received - 5,00,000",
-    amountPaidForAssociation : "Amount Paid For Associaion - 100000",
+    amountPaidForAssociation: "Amount Paid For Associaion - 100000",
     image:
       "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
-    date: "June 22, 2024" 
+    date: "June 22, 2024"
   },
   {
-    id:"5",
-    artDirectorName:"Name : Stacksnova",
-    artDirectorId:"ID No :123",
-    movieName:"Movie Name - Leo",
+    id: "5",
+    artDirectorName: "Name : Stacksnova",
+    artDirectorId: "ID No :123",
+    movieName: "Movie Name - Leo",
     amountReceived: "Amount Received - 5,00,000",
-    amountPaidForAssociation : "Amount Paid For Associaion - 100000",
+    amountPaidForAssociation: "Amount Paid For Associaion - 100000",
     image:
       "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
-    date: "June 22, 2024" 
+    date: "June 22, 2024"
   },
   {
-    id:"6",
-    artDirectorName:"Name : Stacksnova",
-    artDirectorId:"ID No :123",
-    movieName:"Movie Name - Leo",
+    id: "6",
+    artDirectorName: "Name : Stacksnova",
+    artDirectorId: "ID No :123",
+    movieName: "Movie Name - Leo",
     amountReceived: "Amount Received - 5,00,000",
-    amountPaidForAssociation : "Amount Paid For Associaion - 100000",
+    amountPaidForAssociation: "Amount Paid For Associaion - 100000",
     image:
       "https://lh4.googleusercontent.com/proxy/_R-Ov6AKbYCbJBM3o_b946i1oO2Wbe9sjX58Mmsq2Wk3dvL09CNCl9tQmAeNXKfhsfAVWo9a784JHsIv_0xIG-tt5x9ZHFEwlUBaVx6Qhw1RyHvBRk0cLTG0jOolDk8-6CAwOttWLnu50UMxgr33Fz3RrDpoYlevWDRHj00WF6MTRTv5eYiA",
-    date: "June 22, 2024" 
+    date: "June 22, 2024"
   },
 ]
 
@@ -264,7 +262,7 @@ const home = () => {
                 Upcoming Events
               </Text>
             </View>
-            <View className="w-full"style={styles.container}>
+            <View className="w-full" style={styles.container}>
               <FlatList
                 data={events}
                 keyExtractor={(item) => item.id}
@@ -285,7 +283,7 @@ const home = () => {
                 Payments
               </Text>
             </View>
-            <View className="w-full"style={styles.container}>
+            <View className="w-full" style={styles.container}>
               <FlatList
                 data={payments}
                 keyExtractor={(item) => item.id}
@@ -348,13 +346,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: "bold",
-    width:280,
+    width: 280,
     padding: 5,
   },
   subTitle: {
     fontSize: 17,
     fontWeight: "bold",
-    width:280,
+    width: 280,
     padding: 5,
   },
   date: {
