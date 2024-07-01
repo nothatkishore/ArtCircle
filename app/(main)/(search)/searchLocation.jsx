@@ -3,14 +3,14 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Header from '../../../components/Header'
 import SearchBar from '../../../components/SearchBar'
-import Card from '../../../components/Card'
+import Cards from '../../../components/Cards'
 import search from '../../../assets/icons/searchLocation.png'
 
 const searchLocation = () => 
 {
   const data = [{ name : "Spot Name", role : "Location" }, { name : "Spot Name can be long too", role : "Location" }, { name : "Spot Name can be long too", role : "Location" }, { name : "Spot Name can be long too", role : "Location" }, { name : "Spot Name can be long too", role : "Location" }, { name : "Spot Name can be long too", role : "Location" }, { name : "Spot Name can be long too", role : "Location" }, { name : "Spot Name can be long too", role : "Location" }]
   const renderItems = ({ item }) => (
-    <Card 
+    <Cards 
       BigText = {item.name}
       SmallText = {item.role}
       xSmallText='Location link'

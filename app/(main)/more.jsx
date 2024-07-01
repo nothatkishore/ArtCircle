@@ -155,7 +155,7 @@ const more = () =>
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => router.push('/membershipRenewal')}
+          onPress={() => router.push('/memRenew')}
         >
           <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
             <Image
@@ -169,7 +169,7 @@ const more = () =>
         </TouchableOpacity>
 
         <TouchableOpacity
-          onPress={() => router.push('/workPayments')}
+          onPress={() => router.push('/projComission')}
         >
           <View className="w-ful  mt-0.5 flex-row justify-center items-center px-10  bg-white">
             <Image
