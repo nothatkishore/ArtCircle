@@ -103,12 +103,3 @@ const profile = () => {
 }
 
 export default profile
-
-// Image upload functionality
-// Click to Zoom functionality
-// Custom page navigation
-
-
-// Search functionality
-// useRef and useContext
-// Redux implementation

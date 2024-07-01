@@ -11,7 +11,7 @@ const app = () =>
   const [test, settest] = useState(true)
 
   if (test) {
-    return <Redirect href='/home' />;
+    return <Redirect href='/OTP' />;
   }
 
 
@@ -72,7 +72,7 @@ const app = () =>
           <TouchableOpacity
             className='bg-orange-600 p-[10px] rounded-full'
             activeOpacity={0.9}
-            onPress={() => router.push('/home')}
+            onPress={() => router.push('/signIn')}
           >
             <Text className='text-center text-2xl font-normal text-white'>
               Login
