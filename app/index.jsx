@@ -11,7 +11,7 @@ const app = () =>
   const [test, settest] = useState(true)
 
   if (test) {
-    return <Redirect href='/OTP' />;
+    return <Redirect href='/CreatePass' />;
   }
 
 
