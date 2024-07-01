@@ -14,9 +14,9 @@ import Cards from "../../components/Cards";
 
 const home = () => {
   const recentLocations = [
-    { name: "Spot Name", role: "Location" },
-    { name: "Spot Name can be long too", role: "Location" },
-    { name: "Spot Name can be long too", role: "Location" },
+    { name: "Spot No-1", role: "Guindy", location : "Google Map location Link" },
+    { name: "Spot No-2", role: "Anna nagar", location : "Google Map location Link" },
+    { name: "Spot No-3", role: "VR Mall", location : "Google Map location Link" },
   ];
   const events = [
     {
@@ -174,7 +174,7 @@ const home = () => {
     <Cards
       BigText={item.name}
       SmallText={item.role}
-      xSmallText="Location link"
+      xSmallText={item.location}
       PATH="spotDetails"
       flag={true}
     />
