@@ -21,7 +21,7 @@ const forgotPass = () => {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={{ flex: 1 }}
       >
-        <View className='bg-[#ffa629] w-full h-full justify-end'>
+        <View className='bg-black w-full h-full justify-end'>
 
           <View className='h-1/3 w-full justify-center items-center p-4'>
             <Text className='text-white text-2xl'>Verification</Text>
@@ -29,7 +29,7 @@ const forgotPass = () => {
               <Text className='font-medium text-blue-700'>{number}</Text> </Text>
           </View>
 
-          <View className='bg-[#f0f3f6] w-full h-2/3 rounded-t-[30px] justify-start p-5'>
+          <View className='bg-[#000] w-full h-2/3 rounded-t-[30px] justify-start p-5'>
 
             <View className='py-7 px-7'>
               <OtpInput
@@ -56,7 +56,7 @@ const forgotPass = () => {
           </View>
         </View>
       </KeyboardAvoidingView>
-      <StatusBar style='light' backgroundColor='#ffa629' />
+      <StatusBar style='light' backgroundColor='#000' />
     </SafeAreaView>
   )
 }

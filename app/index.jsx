@@ -8,10 +8,10 @@ import TypingText from '../components/TypingText';
 
 const app = () => 
 {
-  const [test, settest] = useState(true)
+  const [test, settest] = useState(false)
 
   if (test) {
-    return <Redirect href='/CreatePass' />;
+    return <Redirect href='/home' />;
   }
 
 
@@ -48,7 +48,7 @@ const app = () =>
   }, [fadeAnim, buttonAnim]);
 
   return (
-    <SafeAreaView className='h-full w-full bg-[#ffa620]'>
+    <SafeAreaView className='h-full w-full bg-black'>
       <StatusBar style='light' />
       <View className='h-full w-full items-center justify-center'>
         <View className='items-center'>
@@ -75,7 +75,7 @@ const app = () =>
             onPress={() => router.push('/signIn')}
           >
             <Text className='text-center text-2xl font-normal text-white'>
-              Login
+              Continue
             </Text>
           </TouchableOpacity>
         </Animated.View>

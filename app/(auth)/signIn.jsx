@@ -36,16 +36,16 @@ const signIn = () => {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={{ flex: 1 }}
       >
-        <View className='bg-[#ffa629] w-full h-full justify-end'>
+        <View className='bg-black w-full h-full justify-end'>
 
-          <View className='h-2/5 w-full justify-center items-center'>
+          <View className='h-2/5 w-full justify-end items-center'>
             <Text className='text-white text-2xl font-medium'>Hello
               <Text className='text-3xl text-orange-100'> Artisians!</Text>
             </Text>
             <Text className='text-white text-xl font-base'>Sign in to continue</Text>
           </View>
 
-          <View className='bg-[#f0f3f6] w-full h-3/5 rounded-t-[30px] justify-start p-5'>
+          <View className='bg-black w-full h-3/5 rounded-t-[30px] justify-start p-5'>
             <View className='bg-slate-50 shadow-lg p-2 rounded-lg my-4 border'>
               <TextInput
                 placeholder='Enter username'
@@ -87,7 +87,7 @@ const signIn = () => {
           </View>
         </View>
       </KeyboardAvoidingView>
-      <StatusBar style='light' backgroundColor='#ffa629' />
+      <StatusBar style='light' backgroundColor='#000' />
     </SafeAreaView>
   )
 }

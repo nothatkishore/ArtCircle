@@ -1,14 +1,20 @@
 {
   "expo": {
-    "name": "ArtCircle",
-    "scheme": "ArtCircle",
-    "slug": "ArtCircle",
+    "name": "ACTADSI",
+    "scheme": "ACTADSI",
+    "slug": "ACTADSI",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+
+    "icon": {
+      "image" : "./assets/images/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/images/logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

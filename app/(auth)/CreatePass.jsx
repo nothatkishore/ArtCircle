@@ -18,7 +18,7 @@ const forgotPass = () => {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={{ flex: 1 }}
       >
-        <View className='bg-[#ffa629] w-full h-full justify-end'>
+        <View className='bg-black w-full h-full justify-end'>
 
           <View className='h-1/3 w-full justify-center items-center'>
             <Image 
@@ -29,7 +29,7 @@ const forgotPass = () => {
             <Text className='text-center p-7 text-white text-lg'>Your New password must be different from your old password</Text>
           </View>
 
-          <View className='bg-[#f0f3f6] w-full h-2/3 rounded-t-[30px] justify-start p-5'>
+          <View className='bg-black w-full h-2/3 rounded-t-[30px] justify-start p-5'>
             <View className='bg-slate-50 shadow-lg p-2 rounded-lg my-4 border'>
               <TextInput
                 placeholder='New password'
@@ -48,7 +48,7 @@ const forgotPass = () => {
 
             <TouchableOpacity
               activeOpacity={0.7}
-              onPress={() => router.replace('/signIn')}
+              onPress={() => router.replace('/home')}
             >
               <View className='bg-[#ffa629] p-2 rounded-lg my-6'>
                 <Text className='text-center text-white text-xl'>
@@ -60,7 +60,7 @@ const forgotPass = () => {
           </View>
         </View>
       </KeyboardAvoidingView>
-      <StatusBar style='light' backgroundColor='#ffa629' />
+      <StatusBar style='light' backgroundColor='#000' />
     </SafeAreaView>
   )
 }
