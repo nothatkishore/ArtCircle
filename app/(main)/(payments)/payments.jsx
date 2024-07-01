@@ -17,12 +17,12 @@ const payments = () => {
             <ClickOption
               name='Membership renewal'
               icon={renew}
-              handlePress={() => router.push('/membershipRenewal')}
+              handlePress={() => router.push('/memRenew')}
             />
             <ClickOption
               name='Project commission'
               icon={payment}
-              handlePress={() => router.push('/workPayments')}
+              handlePress={() => router.push('/projComission')}
             />
             <ClickOption
               name='Loan details'

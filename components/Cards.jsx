@@ -4,7 +4,7 @@ import { router } from 'expo-router'
 import placeHolder from '../assets/images/placeHolder.jpg'
 
 
-const Card = ({ image, BigText, SmallText, xSmallText, PATH, flag }) => {
+const Cards = ({ image, BigText, SmallText, xSmallText, PATH, flag }) => {
     return (
         <TouchableOpacity
             activeOpacity={0.8}
@@ -43,4 +43,4 @@ const Card = ({ image, BigText, SmallText, xSmallText, PATH, flag }) => {
     )
 }
 
-export default Card
+export default Cards
