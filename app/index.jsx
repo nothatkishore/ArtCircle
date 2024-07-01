@@ -11,7 +11,7 @@ const app = () =>
   const [test, settest] = useState(true)
 
   if (test) {
-    return <Redirect href='/home' />;
+    return <Redirect href='/CreatePass' />;
   }
 
 
@@ -33,7 +33,7 @@ const app = () =>
         }
       ),
       // Delay to account for text animation completion
-      Animated.delay(200), // Adjust this delay based on TypingText animation duration
+      Animated.delay(100), // Adjust this delay based on TypingText animation duration
       // Button bounce animation after logo fade-in completes
       Animated.spring(
         buttonAnim,
@@ -48,7 +48,7 @@ const app = () =>
   }, [fadeAnim, buttonAnim]);
 
   return (
-    <SafeAreaView className='h-full w-full bg-black'>
+    <SafeAreaView className='h-full w-full bg-[#ffa620]'>
       <StatusBar style='light' />
       <View className='h-full w-full items-center justify-center'>
         <View className='items-center'>
@@ -70,7 +70,7 @@ const app = () =>
         <Animated.View style={{ transform: [{ scale: buttonAnim }], marginTop: 100, width: 200 }}>
 
           <TouchableOpacity
-            className='bg-orange-600 p-[10px] rounded-full'
+            className='bg-[#ffa620] p-[10px] rounded-lg'
             activeOpacity={0.9}
             onPress={() => router.push('/signIn')}
           >

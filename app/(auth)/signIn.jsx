@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, Alert } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
@@ -6,9 +6,29 @@ import { Link, router } from 'expo-router'
 
 const signIn = () => {
   const [form, setForm] = useState({
-    email: '',
+    username: '',
     password: ''
   })
+
+  const handlePress = () => 
+  {
+    if (form.username === '' || form.password.length < 0) 
+    {
+      Alert.alert('Invalid credentials', 'Enter valid username and password combination')
+      return
+    }
+
+    //send form data as a API request
+    const valid_user = true //store response as true or false in valid_user
+    if (valid_user)
+      router.replace('/home')
+    else 
+    {
+      Alert.alert('Invalid user', 'User does not exist')
+      setForm({...form, password : ''})
+      return
+    }
+  }
 
   return (
     <SafeAreaView className='h-full w-full'>
@@ -28,8 +48,8 @@ const signIn = () => {
           <View className='bg-[#f0f3f6] w-full h-3/5 rounded-t-[30px] justify-start p-5'>
             <View className='bg-slate-50 shadow-lg p-2 rounded-lg my-4 border'>
               <TextInput
-                placeholder='Enter Email'
-                onChangeText={(text) => setForm({ ...form, email: text })}
+                placeholder='Enter username'
+                onChangeText={(text) => setForm({ ...form, username: text })}
                 value={form.email}
               />
             </View>
@@ -54,7 +74,8 @@ const signIn = () => {
 
             <TouchableOpacity
               activeOpacity={0.7}
-              onPress={() => router.push('/home')}
+              onPress={handlePress}
+            // onPress={() => router.push('/home')}
             >
               <View className='bg-[#ffa629] p-2 rounded-lg my-6'>
                 <Text className='text-center text-white text-xl'>
