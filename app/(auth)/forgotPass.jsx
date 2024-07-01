@@ -32,7 +32,7 @@ const forgotPass = () => {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={{ flex: 1 }}
       >
-        <View className='bg-black w-full h-full justify-end'>
+        <View className='bg-[#161622] w-full h-full justify-end'>
 
           <View className='h-1/3 w-full justify-center items-center p-4'>
             <Text className='text-white text-2xl'>Verification</Text>
@@ -40,7 +40,7 @@ const forgotPass = () => {
               <Text className='font-semibold'> One Time Password</Text> to your phone number</Text>
           </View>
 
-          <View className='bg-black w-full h-2/3 rounded-t-[30px] justify-start p-5'>
+          <View className='bg-white w-full h-2/3 rounded-t-[30px] justify-start p-5'>
             <View className='bg-slate-50 shadow-lg p-2 rounded-lg my-4 border'>
               <TextInput
                 placeholder='Mobile number'
@@ -52,8 +52,8 @@ const forgotPass = () => {
 
             <TouchableOpacity
               activeOpacity={0.7}
-              onPress={handlePress}
-            // onPress={() => router.push('/OTP')}
+              // onPress={handlePress}
+            onPress={() => router.push('/OTP')}
             >
               <View className='bg-[#ffa629] p-2 rounded-lg my-6'>
                 <Text className='text-center text-white text-xl'>
@@ -65,7 +65,7 @@ const forgotPass = () => {
           </View>
         </View>
       </KeyboardAvoidingView>
-      <StatusBar style='light' backgroundColor='#000' />
+      <StatusBar style='light' backgroundColor='#161622' />
     </SafeAreaView>
   )
 }

@@ -6,12 +6,11 @@ import { StatusBar } from 'expo-status-bar';
 import { Redirect, router } from 'expo-router';
 import TypingText from '../components/TypingText';
 
-const app = () => 
-{
+const app = () => {
   const [test, settest] = useState(false)
 
   if (test) {
-    return <Redirect href='/home' />;
+    return <Redirect href='/forgotPass' />;
   }
 
 
@@ -48,7 +47,7 @@ const app = () =>
   }, [fadeAnim, buttonAnim]);
 
   return (
-    <SafeAreaView className='h-full w-full bg-black'>
+    <SafeAreaView className='h-full w-full bg-[#161622]'>
       <StatusBar style='light' />
       <View className='h-full w-full items-center justify-center'>
         <View className='items-center'>
@@ -66,7 +65,7 @@ const app = () =>
             </View>
           </View>
         </View>
-        
+
         <Animated.View style={{ transform: [{ scale: buttonAnim }], marginTop: 100, width: 200 }}>
 
           <TouchableOpacity

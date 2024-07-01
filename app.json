@@ -5,13 +5,7 @@
     "slug": "ACTADSI",
     "version": "1.0.0",
     "orientation": "portrait",
-
-    "icon": {
-      "image" : "./assets/images/logo.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-
+    "icon": "./assets/images/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/images/logo.png",
@@ -23,7 +17,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/images/logo.png",
         "backgroundColor": "#ffffff"
       },
       "softwareKeyboardLayoutMode": "pan",
@@ -40,7 +34,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "588f8784-4c56-4ba4-bae3-7aaa22260f9c"
+        "projectId": "a5d22a13-89b7-4c5f-9414-5e35bc1a508e"
       }
     }
   }

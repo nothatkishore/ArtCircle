@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, Alert } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
@@ -10,9 +10,21 @@ const forgotPass = () => {
 
   const [number, setNumber] = useState('+91 9840287145')
   const [otp, setOTP] = useState('')
+  const [click, setClick] = useState(false)
 
   const handleOTP = () => {
-    console.log(otp)
+    if (otp.length < 4) {
+      Alert.alert('Error', 'OTP Invalid')
+      setOTP('')
+      return
+    }
+
+    else {
+      //Make a API request
+      const isValidOtp = true
+      if (isValidOtp)
+        router.replace('/CreatePass')
+    }
   }
 
   return (
@@ -21,7 +33,7 @@ const forgotPass = () => {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={{ flex: 1 }}
       >
-        <View className='bg-black w-full h-full justify-end'>
+        <View className='bg-[#161622] w-full h-full justify-end'>
 
           <View className='h-1/3 w-full justify-center items-center p-4'>
             <Text className='text-white text-2xl'>Verification</Text>
@@ -29,7 +41,7 @@ const forgotPass = () => {
               <Text className='font-medium text-blue-700'>{number}</Text> </Text>
           </View>
 
-          <View className='bg-[#000] w-full h-2/3 rounded-t-[30px] justify-start p-5'>
+          <View className='bg-white w-full h-2/3 rounded-t-[30px] justify-start p-5'>
 
             <View className='py-7 px-7'>
               <OtpInput
@@ -46,6 +58,7 @@ const forgotPass = () => {
               activeOpacity={0.7}
               // onPress={handleOTP}
               onPress={() => router.push('/CreatePass')}
+              disabled={click}
             >
               <View className='bg-[#ffa629] p-2 rounded-lg my-6'>
                 <Text className='text-center text-white text-xl'>
@@ -56,7 +69,7 @@ const forgotPass = () => {
           </View>
         </View>
       </KeyboardAvoidingView>
-      <StatusBar style='light' backgroundColor='#000' />
+      <StatusBar style='light' backgroundColor='#161622' />
     </SafeAreaView>
   )
 }
