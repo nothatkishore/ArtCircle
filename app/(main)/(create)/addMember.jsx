@@ -25,6 +25,11 @@ const addMember = () => {
       aadhar: ''
     })
 
+    const handlePress = () =>
+    {
+        //make a post request to backend
+    }
+
   return (
     <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
       <Header />
@@ -161,8 +166,11 @@ const addMember = () => {
         <View className='my-10 bg-orange-600 mx-3 p-2 rounded-xl'>
           <TouchableOpacity
             activeOpacity={0.7}
+            // onPress={handlePress}
           >
-            <Text className='text-white text-center'>Add Member</Text>
+            <Text className='text-white text-center'>
+              Add Member
+            </Text>
           </TouchableOpacity>
         </View>
 

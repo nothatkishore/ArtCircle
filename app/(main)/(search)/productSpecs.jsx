@@ -39,7 +39,7 @@ const ProductDetails = () => {
             <Header />
 
             <View className='bg-slate-50  rounded-xl shadow-2xl p-2 m-4'>
-                <Text className='text-2xl font-light  text-center'>
+                <Text className='text-2xl font-normal text-center'>
                     Product Name
                 </Text>
             </View>
@@ -52,14 +52,35 @@ const ProductDetails = () => {
                 keyExtractor={(item) => item.id}
                 showsVerticalScrollIndicator={false}
                 renderItem={renderItems}
-                ListFooterComponent={() =>
+                ListHeaderComponent={() =>
                 (
-                    <View className='bg-slate-50 rounded-xl shadow-2xl p-7 m-4'>
-                        <Text className='text-lg font-light h-auto'>
-                            This contains details of the above product such as
-                            direction of use, terms and condition and location link.
-                        </Text>
-                    </View>
+                    <>
+                        <View className='bg-slate-50 rounded-xl shadow-2xl p-5 m-4 h-auto space-y-1'>
+                            <Text className='text-sm font-medium'>Find on maps :
+                                <Text className='font-normal'> Location link</Text>
+                            </Text>
+                            <Text className='text-sm font-medium'>Active days :
+                                <Text className='font-normal text-xs'> Mon, Tue, Wed, Thu, Fri, Sat and Sun </Text>
+                            </Text>
+                            <Text className='text-sm font-medium'>Active hours :
+                                <Text className='font-normal'> 9:00 AM - 5:00 PM</Text>
+                            </Text>
+                            <Text className='text-sm font-medium'>Contact :
+                                <Text className='font-normal'> +91 98989898901 </Text>
+                            </Text>
+
+                            <View className='bg-blue-200 p-3 mt-3 rounded-md'>
+                                <Text className='text-sm font-medium'>Description :
+                                    <Text className='font-normal'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deleniti amet magnam earum ipsam atque commodi, totam sint quibusdam fugiat. Dolores, ipsa quam? Accusantium aliquid voluptates sunt officia? Atque, aut. </Text>
+                                </Text>
+                            </View>
+
+                        </View>
+
+                        <View className='bg-gray-50 m-7 p-3 rounded-lg shadow-2xl shadow-blue-500'>
+                            <Text className='text-center text-2xl'>Images</Text>
+                        </View>
+                    </>
                 )}
             />
 

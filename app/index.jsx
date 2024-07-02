@@ -10,7 +10,7 @@ const app = () => {
   const [test, settest] = useState(false)
 
   if (test) {
-    return <Redirect href='/forgotPass' />;
+    return <Redirect href='/home' />;
   }
 
 
