@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import { Redirect, router } from 'expo-router';
 import TypingText from '../components/TypingText';
+import { useUserDets } from '../context/userDetails'; 
 
 const app = () => {
   const [test, settest] = useState(true)
@@ -13,6 +14,8 @@ const app = () => {
     return <Redirect href='/searchStores' />;
   }
 
+  const { userName, setuserName } = useUserDets()
+  console.log(userName)
 
   const fadeAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
   const buttonAnim = useRef(new Animated.Value(0)).current; // Initial value for scale: 0

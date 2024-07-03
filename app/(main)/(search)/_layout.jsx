@@ -11,7 +11,6 @@ const SearchLayout = () =>
             <Stack.Screen name="spotDetails/[query]" options={{headerShown : false}} />
             <Stack.Screen name="productDetails/[query]" options={{headerShown : false}} />
             <Stack.Screen name="productSpecs/[query]" options={{headerShown : false}} />
-
         </Stack>
     )
 }
