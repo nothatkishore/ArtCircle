@@ -1,11 +1,15 @@
 import { View, Text, Image, FlatList, Dimensions, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import sample from '../../../assets/images/placeHolder.jpg';
-import Header from '../../../components/Header';
-import { router } from 'expo-router';
+import sample from '../../../../assets/images/placeHolder.jpg';
+import Header from '../../../../components/Header';
+import { router, useLocalSearchParams } from 'expo-router';
 
 const ProductDetails = () => {
+  const { query } = useLocalSearchParams()
+  console.log(query)
+  //Make a API request with query to get the data
+
   const data = [
     { id: 1, description: 'Product Name', image: sample },
     { id: 2, description: 'Product Name', image: sample },
@@ -17,7 +21,7 @@ const ProductDetails = () => {
 
   const renderItems = ({ item }) => (
     <TouchableOpacity
-      onPress={() => router.push('/productSpecs')}
+      onPress={() => router.push(`/productSpecs/${item.description}`)}
       activeOpacity={0.7}
     >
         <View className='mb-5 flex-row items-center p-4 h-48 bg-slate-50 shadow-2xl rounded-lg justify-around'>

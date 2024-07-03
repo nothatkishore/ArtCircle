@@ -23,7 +23,7 @@ const searchLocation = () => {
       BigText={item.name}
       SmallText={item.role}
       xSmallText='Location link'
-      PATH='spotDetails'
+      PATH={`spotDetails/${item.name}`}
       flag={true}
     // image={item.image}
     />

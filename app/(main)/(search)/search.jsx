@@ -18,9 +18,9 @@ const search = () => {
       />
       
       <ClickOption 
-        name='Search products'
+        name='Search stores'
         icon={art}
-        handlePress={() => router.push('/searchProducts')}
+        handlePress={() => router.push('/searchStores')}
       />
     </SafeAreaView>
   )

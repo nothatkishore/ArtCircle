@@ -6,13 +6,13 @@ import Cards from '../../../components/Cards'
 import searchButton from '../../../assets/icons/find-store.png'
 
 const searchProducts = () => {
-  const data = [{ name: "Apple", role: "Store name" }, { name: "Ball", role: "Store Name" }, { name: "Cat", role: "Store Name" }, { name: "Dog", role: "Store Name" }, { name: "Elephant", role: "Store Name" }, { name: "Fruits", role: "Store Name" }, { name: "Hen", role: "Store Name" }, { name: "Product Name", role: "Store Name" }]
+  const data = [{ name: "Apple", role: "Apple stores" }, { name: "Ball", role: "Ball stores" }, { name: "Cat", role: "Cat stores" }, { name: "Dog", role: "Dog stores" }, { name: "Elephant", role: "Elephant stores" }, { name: "Fruits", role: "Fruit stores" }, { name: "Hen", role: "Hen stores" }, { name: "Product Name", role: "Store Name" }]
   const renderItems = ({ item }) => (
     <Cards
       BigText={item.role}
       SmallText={item.name}
       xSmallText='Location link'
-      PATH='productDetails'
+      PATH={`productDetails/${item.role}`}
       flag={true}
     />
   )

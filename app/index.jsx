@@ -10,7 +10,7 @@ const app = () => {
   const [test, settest] = useState(true)
 
   if (test) {
-    return <Redirect href='/productSpecs' />;
+    return <Redirect href='/searchStores' />;
   }
 
 

@@ -7,10 +7,10 @@ const SearchLayout = () =>
         <Stack>
             <Stack.Screen name="search" options={{headerShown : false}} />
             <Stack.Screen name="searchLocation" options={{headerShown : false}} />
-            <Stack.Screen name="searchProducts" options={{headerShown : false}} />
-            <Stack.Screen name="spotDetails" options={{headerShown : false}} />
-            <Stack.Screen name="productDetails" options={{headerShown : false}} />
-            <Stack.Screen name="productSpecs" options={{headerShown : false}} />
+            <Stack.Screen name="searchStores" options={{headerShown : false}} />
+            <Stack.Screen name="spotDetails/[query]" options={{headerShown : false}} />
+            <Stack.Screen name="productDetails/[query]" options={{headerShown : false}} />
+            <Stack.Screen name="productSpecs/[query]" options={{headerShown : false}} />
 
         </Stack>
     )
