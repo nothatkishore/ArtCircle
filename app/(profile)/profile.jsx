@@ -4,8 +4,36 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import placeHolder from '../../assets/icons/user.png'
 import { Picker } from '@react-native-picker/picker'
 import { StatusBar } from 'expo-status-bar'
+import * as ImagePicker from 'expo-image-picker'
 
 const profile = () => {
+
+    const [SelectedImage, setSelectedImage] = useState(null)
+
+    const handlePress = async () =>
+    {
+        if(!edit)
+            return
+        
+        const permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync()
+        if(permissionResult.granted === false)
+        {
+            alert('Permission to access gallery is required!')
+            return
+        }
+
+        const result = await ImagePicker.launchImageLibraryAsync(
+        {
+            mediaTypes : ImagePicker.MediaTypeOptions.Images,
+            allowsEditing : true,
+            aspect : [4, 3],
+            quality : 1,
+        })
+
+        if(!result.canceled){
+            setSelectedImage(result.assets[0].uri)
+        }
+    }
 
     const [form, setForm] = useState(
         {
@@ -23,13 +51,19 @@ const profile = () => {
 
             <View className='h-1/3 w-full items-center justify-center'>
                 <TouchableOpacity
-                    activeOpacity={0.8}
+                    activeOpacity={ edit ? 0.8 : 1}
+                    onPress={handlePress}
                 >
-                    <Image
-                        source={placeHolder}
-                        className='h-24 w-24'
-                        resizeMode='contain'
-                    />
+                    <View className={edit && 'bg-white p-2 rounded-full'}>
+                        <Image
+                            source={SelectedImage ? { uri : SelectedImage } : placeHolder}
+                            className='h-24 w-24 rounded-full '
+                            resizeMode='cover'
+                        />
+
+                        {edit && <Text className='text-center'>Change</Text>}
+                        
+                    </View>
                 </TouchableOpacity>
                 <Text className='mt-2 text-2xl font-light'>{form.name}</Text>
                 <Text className='mt-1 text-lg font-light'>{form.designation}</Text>
