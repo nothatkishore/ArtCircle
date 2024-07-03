@@ -1,14 +1,16 @@
-import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
-import React from 'react';
+import { View, Text, Image, FlatList, TouchableOpacity, Modal } from 'react-native';
+import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import sample from '../../../assets/images/placeHolder.jpg';
 import Header from '../../../components/Header';
+import close from '../../../assets/icons/close.png'
+import logo from '../../../assets/images/logo.png'
 
 const ProductDetails = () => {
     const data = [
         { id: 1, description: 'Product Name', image: sample },
         { id: 2, description: 'Product Name', image: sample },
-        { id: 3, description: 'Product Name', image: sample },
+        { id: 3, description: 'Product Name', image: logo },
         { id: 4, description: 'Product Name', image: sample },
         { id: 5, description: 'Product Name', image: sample },
         { id: 6, description: 'Product Name', image: sample },
@@ -20,11 +22,20 @@ const ProductDetails = () => {
         { id: 12, description: 'Product Name', image: sample }
     ];
 
+    const [ModalVisible, setModalVisible] = useState(false)
+    const [selectedImage, setselectedImage] = useState(null)
+
+    const handlePress = (imageU) => {
+        setModalVisible(true)
+        setselectedImage(imageU)
+    }
+
     const renderItems = ({ item }) =>
     (
         <TouchableOpacity
             className='flex flex-1 justify-center items-center flex-row bg-slate-200 h-[200px] rounded-lg'
             activeOpacity={0.8}
+            onPress={() => handlePress(item.image)}
         >
             <Image
                 source={item.image}
@@ -83,6 +94,44 @@ const ProductDetails = () => {
                     </>
                 )}
             />
+
+            {
+                selectedImage &&
+                (
+                    <Modal
+                        visible={ModalVisible}
+                        transparent={true}
+                        onRequestClose={() => setModalVisible(false)}
+                    >
+                        <View 
+                            className= 'h-full justify-center'
+                            style={{backgroundColor : 'rgba(0,0,0,0.8)'}}
+                        >
+                            <View className='items-end p-2'>
+                                <TouchableOpacity
+                                    onPress={() => setModalVisible(false)}
+                                    activeOpacity={0.6}
+                                >
+                                    <Image
+                                        source={close}
+                                        className='h-9 w-9'
+                                        resizeMode='contain'
+                                    />
+                                </TouchableOpacity>
+                            </View>
+                            <View className='justify-center items-center'>
+                                <Image
+                                    source={selectedImage}
+                                    className='w-11/12 h-11/12'
+                                    resizeMode='contain'
+                                />
+                            </View>
+                        </View>
+                    </Modal>
+                )
+            }
+
+
 
         </SafeAreaView>
     );

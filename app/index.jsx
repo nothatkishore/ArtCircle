@@ -7,10 +7,10 @@ import { Redirect, router } from 'expo-router';
 import TypingText from '../components/TypingText';
 
 const app = () => {
-  const [test, settest] = useState(false)
+  const [test, settest] = useState(true)
 
   if (test) {
-    return <Redirect href='/home' />;
+    return <Redirect href='/productSpecs' />;
   }
 
 

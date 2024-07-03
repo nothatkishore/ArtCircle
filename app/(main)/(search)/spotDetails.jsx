@@ -1,8 +1,9 @@
-import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
-import React from 'react';
+import { View, Text, Image, FlatList, TouchableOpacity, Modal } from 'react-native';
+import { React, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import sample from '../../../assets/images/placeHolder.jpg';
 import Header from '../../../components/Header';
+import close from '../../../assets/icons/close.png'
 
 const ProductDetails = () => {
     const data = [
@@ -20,28 +21,33 @@ const ProductDetails = () => {
         { id: 12, description: 'Product Name', image: sample }
     ];
 
-    const renderItems = ({ item }) =>
-    (
-        <>
-            <TouchableOpacity
-                className='flex flex-1 justify-center items-center flex-row bg-slate-200 h-[200px] rounded-lg'
-                activeOpacity={0.8}
-            >
-                <Image
-                    source={item.image}
-                    className='h-full w-full rounded-2xl'
-                    resizeMode='cover'
-                />
-            </TouchableOpacity>
-        </>
+    const [modalVisible, setModalVisible] = useState(false);
+    const [selImage, setSelImage] = useState(null);
 
-    )
+    const handlePress = (image) => {
+        setSelImage(image);
+        setModalVisible(true);
+    };
+
+    const renderItems = ({ item }) => (
+        <TouchableOpacity
+            className='flex flex-1 justify-center items-center flex-row bg-slate-200 h-[200px] rounded-2xl'
+            activeOpacity={0.8}
+            onPress={() => handlePress(item.image)}
+        >
+            <Image
+                source={item.image}
+                className='h-full w-full rounded-2xl'
+                resizeMode='cover'
+            />
+        </TouchableOpacity>
+    );
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#f0f3f6' }}>
             <Header />
 
-            <View className='bg-slate-50  rounded-xl shadow-2xl p-2 m-4'>
+            <View className='bg-slate-50 rounded-xl shadow-2xl p-2 m-4'>
                 <Text className='text-2xl font-normal text-center'>
                     Location Name
                 </Text>
@@ -50,13 +56,12 @@ const ProductDetails = () => {
             <FlatList
                 data={data}
                 numColumns={2}
-                columnWrapperStyle={{ gap: 10, paddingHorizontal: 10 }}
-                contentContainerStyle={{ gap: 10, paddingBottom: 20 }}
-                keyExtractor={(item) => item.id}
+                columnWrapperStyle={{ gap: 7, paddingHorizontal: 10 }}
+                contentContainerStyle={{ gap: 7, paddingBottom: 20 }}
+                keyExtractor={(item) => item.id.toString()}
                 showsVerticalScrollIndicator={false}
                 renderItem={renderItems}
-                ListHeaderComponent={() =>
-                (
+                ListHeaderComponent={() => (
                     <>
                         <View className='bg-slate-50 rounded-xl shadow-2xl p-5 m-4 h-auto space-y-1'>
                             <Text className='text-sm font-medium'>Find on maps :
@@ -77,7 +82,6 @@ const ProductDetails = () => {
                                     <Text className='font-normal'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deleniti amet magnam earum ipsam atque commodi, totam sint quibusdam fugiat. Dolores, ipsa quam? Accusantium aliquid voluptates sunt officia? Atque, aut. </Text>
                                 </Text>
                             </View>
-
                         </View>
 
                         <View className='bg-gray-50 m-7 p-3 rounded-lg shadow-2xl shadow-blue-500'>
@@ -87,6 +91,41 @@ const ProductDetails = () => {
                 )}
             />
 
+            {selImage && (
+                <Modal
+                    visible={modalVisible}
+                    transparent={true}
+                    onRequestClose={() => setModalVisible(false)}
+                >
+                    <View 
+                        className='w-full h-full justify-center'
+                        style={{backgroundColor : 'rgba(0,0,0,0.8)'}}
+                    >
+
+                        <View className='justify-center'>
+                            <View className='justify-end items-end p-2'>
+                                <TouchableOpacity
+                                    onPress={() => setModalVisible(false)}
+                                >
+                                    <Image
+                                        source={close}
+                                        className='h-[30px] w-[30px]'
+                                        resizeMode='contain'
+                                    />
+                                </TouchableOpacity>
+                            </View>
+
+                            <View className='justify-center items-center'>
+                                <Image
+                                    source={selImage}
+                                    className='w-11/12 h-11/12 rounded-2xl'
+                                    resizeMode='contain'
+                                />
+                            </View>
+                        </View>
+                    </View>
+                </Modal>
+            )}
         </SafeAreaView>
     );
 };
