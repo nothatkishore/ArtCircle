@@ -18,6 +18,3 @@ const RootLayout = () => {
 }
 
 export default RootLayout
-
-// Globalstate variable : user profile picture
-// 
