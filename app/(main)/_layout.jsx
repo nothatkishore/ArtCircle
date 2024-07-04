@@ -17,7 +17,7 @@ const TabIcon = ({ icon, color, name, focused }) => {
         resizeMode='contain'
       />
 
-      <Text className={`${focused ? 'font-psemibold' : 'font-pregular'} text-[10px] text-white`}>
+      <Text className={`${focused ? 'font-bold text-gray-700' : 'font-normal text-white'} text-[10px]`}>
         {name}
       </Text>
     </View>

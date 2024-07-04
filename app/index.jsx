@@ -10,7 +10,7 @@ const app = () => {
   const [test, settest] = useState(true)
 
   if (test) {
-    return <Redirect href='/addSetprops' />;
+    return <Redirect href='/home' />;
   }
 
   const fadeAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
