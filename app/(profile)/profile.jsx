@@ -1,14 +1,17 @@
 import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import placeHolder from '../../assets/icons/user.png'
 import { Picker } from '@react-native-picker/picker'
 import { StatusBar } from 'expo-status-bar'
 import * as ImagePicker from 'expo-image-picker'
+import { useSelector, useDispatch } from 'react-redux'
+import { setProfile, setName, setDesignation } from '../../redux/slices/userSlice' 
 
 const profile = () => {
 
-    const [SelectedImage, setSelectedImage] = useState(null)
+    const profile = useSelector((state) => state.user.profile)
+    const dispatch = useDispatch()
 
     const handlePress = async () =>
     {
@@ -31,10 +34,11 @@ const profile = () => {
         })
 
         if(!result.canceled){
-            setSelectedImage(result.assets[0].uri)
+            dispatch(setProfile(result.assets[0].uri))
         }
     }
 
+    //Make a request to get these details
     const [form, setForm] = useState(
         {
             profile: placeHolder,
@@ -43,6 +47,13 @@ const profile = () => {
             designation: 'Director',
             contact: '9840287145'
         })
+
+    useEffect(() =>
+    {   
+        dispatch(setName(form.name))
+        dispatch(setDesignation(form.designation))
+    }, [form])
+
 
     const [edit, setEdit] = useState(false)
 
@@ -56,7 +67,7 @@ const profile = () => {
                 >
                     <View className={edit && 'bg-white p-2 rounded-full'}>
                         <Image
-                            source={SelectedImage ? { uri : SelectedImage } : placeHolder}
+                            source={profile ? { uri : profile } : placeHolder}
                             className='h-24 w-24 rounded-full '
                             resizeMode='cover'
                         />
@@ -75,7 +86,8 @@ const profile = () => {
                 <View className='bg-slate-50 w-full rounded-lg m-3'>
                     <Picker
                         selectedValue={form.designation}
-                        onValueChange={(value) => setForm({ ...form, designation: value })}
+                        onValueChange={(text) => setForm({ ...form, designation: text })
+}
                         enabled={edit}
                     >
                         <Picker.Item label="Technician" value="Technician" />

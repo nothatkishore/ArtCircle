@@ -10,22 +10,22 @@ const signIn = () => {
     password: ''
   })
 
-  const handlePress = () => 
-  {
-    if (form.username === '' || form.password.length < 0) 
-    {
+  const handlePress = () => {
+    if (form.username === '' || form.password.length < 0) {
       Alert.alert('Invalid credentials', 'Enter valid username and password combination')
       return
     }
 
     //send form data as a API request
     const valid_user = true //store response as true or false in valid_user
-    if (valid_user)
+    if (valid_user) {
+      //Response should be the username
       router.replace('/home')
-    else 
-    {
+    }
+
+    else {
       Alert.alert('Invalid user', 'User does not exist')
-      setForm({...form, password : ''})
+      setForm({ ...form, password: '' })
       return
     }
   }
@@ -75,7 +75,7 @@ const signIn = () => {
             <TouchableOpacity
               activeOpacity={0.7}
               // onPress={handlePress}
-            onPress={() => router.push('/home')}
+              onPress={() => router.push('/home')}
             >
               <View className='bg-[#ffa629] p-2 rounded-lg my-6'>
                 <Text className='text-center text-white text-xl'>
