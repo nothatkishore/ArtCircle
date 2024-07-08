@@ -1,9 +1,10 @@
-import { View, Text, ScrollView, TextInput, TouchableOpacity, Image } from 'react-native'
+import { View, Text, ScrollView, TextInput, TouchableOpacity, Image, Alert } from 'react-native'
 import { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Header from '../../../components/Header'
 import { Picker } from '@react-native-picker/picker';
 import profile from '../../../assets/icons/photo.png'
+import * as ImagePicker from 'expo-image-picker'
 
 // Functionality
 //  Image picker functionality
@@ -14,7 +15,7 @@ const addMember = () => {
 
   const [form, setform] = useState(
     {
-      profile: '',
+      profile: null,
       firstName: '',
       lastName: '',
       position: '',
@@ -30,10 +31,32 @@ const addMember = () => {
         //make a post request to backend
     }
 
+    const uploadImage = async () =>
+    {
+        const permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync()
+        if(permissionResult.granted === false)
+        {
+           Alert.alert('Access denied', 'Permission required to import image from gallery')
+           return
+        }
+
+        const result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes : ImagePicker.MediaTypeOptions.Images,
+            allowsEditing : true,
+            aspect : [4, 4],
+            quality : 1
+        })
+
+        if(!result.canceled)
+        {
+          setform({...form, profile : result.assets[0].uri})
+        }
+    }
+
   return (
     <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
       <Header />
-      <Text className='text-black text-center text-2xl font-light pb-2'>
+      <Text className='text-white m-4 p-2 rounded-lg text-center text-2xl font-light bg-gray-700'>
         Add Member details
       </Text>
       <ScrollView className='h-full w-full'>
@@ -42,11 +65,12 @@ const addMember = () => {
           <View className='mt-2 items-center border rounded-xl p-2'>
             <TouchableOpacity
               activeOpacity={0.7}
+              onPress={uploadImage}
             >
               <Image
-                source={profile}
+                source={form.profile ? {uri : form.profile} : profile}
                 resizeMode='contain'
-                className='h-20 w-20'
+                className='h-24 w-24'
               />
             </TouchableOpacity>
           </View>

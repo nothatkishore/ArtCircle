@@ -11,7 +11,7 @@ const search = () => {
   return (
     <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
       <Header />
-      <View className='mt-7 mx-2 '>
+      <View className='mt-7'>
         <ClickOption
           name='Search locations'
           icon={map}
