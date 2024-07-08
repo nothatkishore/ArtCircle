@@ -5,26 +5,31 @@ import sample from '../../../../assets/images/placeHolder.jpg';
 import Header from '../../../../components/Header';
 import close from '../../../../assets/icons/close.png'
 import { useLocalSearchParams } from 'expo-router';
+import picture1 from '../../../../placeholder/Location/beach.jpg'
+import picture2 from '../../../../placeholder/Location/beach2.jpg'
+import picture3 from '../../../../placeholder/Location/forest.jpg'
+import picture4 from '../../../../placeholder/Location/forest2.jpg'
+import picture5 from '../../../../placeholder/Location/palace2.jpg'
 
-const spotDetails = () => 
-{
+
+const spotDetails = () => {
     const { query } = useLocalSearchParams()
     console.log(query)
     //use this query keyword to make a API request
-     
+
     const data = [
-        { id: 1, description: 'Product Name', image: sample },
-        { id: 2, description: 'Product Name', image: sample },
-        { id: 3, description: 'Product Name', image: sample },
-        { id: 4, description: 'Product Name', image: sample },
-        { id: 5, description: 'Product Name', image: sample },
-        { id: 6, description: 'Product Name', image: sample },
-        { id: 7, description: 'Product Name', image: sample },
-        { id: 8, description: 'Product Name', image: sample },
-        { id: 9, description: 'Product Name', image: sample },
-        { id: 10, description: 'Product Name', image: sample },
-        { id: 11, description: 'Product Name', image: sample },
-        { id: 12, description: 'Product Name', image: sample }
+        { id: 1, image: picture1 },
+        { id: 2, image: picture2 },
+        { id: 3, image: picture3 },
+        { id: 4, image: picture4 },
+        { id: 5, image: picture5 },
+        { id: 6, image: picture1 },
+        { id: 7, image: picture2 },
+        { id: 8, image: picture3 },
+        { id: 9, image: picture4 },
+        { id: 10, image: picture5 },
+        { id: 11, image: picture1 },
+        { id: 12, image: picture2 }
     ];
 
     const [modalVisible, setModalVisible] = useState(false);
@@ -55,7 +60,7 @@ const spotDetails = () =>
 
             <View className='bg-slate-50 rounded-xl shadow-2xl p-2 m-4'>
                 <Text className='text-2xl font-normal text-center'>
-                    Location Name
+                    {query}
                 </Text>
             </View>
 
@@ -103,32 +108,24 @@ const spotDetails = () =>
                     transparent={true}
                     onRequestClose={() => setModalVisible(false)}
                 >
-                    <View 
+                    <View
                         className='w-full h-full justify-center'
-                        style={{backgroundColor : 'rgba(0,0,0,0.8)'}}
+                        style={{ backgroundColor: 'rgba(0,0,0,0.8)' }}
                     >
-
-                        <View className='justify-center'>
-                            <View className='justify-end items-end p-2'>
-                                <TouchableOpacity
-                                    onPress={() => setModalVisible(false)}
-                                >
+                        <TouchableOpacity
+                            activeOpacity={0.8}
+                            onPress={() => setModalVisible(false)}
+                        >
+                            <View className='justify-center'>
+                                <View className='justify-center items-center'>
                                     <Image
-                                        source={close}
-                                        className='h-[30px] w-[30px]'
+                                        source={selImage}
+                                        className='w-11/12 h-11/12 rounded-2xl'
                                         resizeMode='contain'
                                     />
-                                </TouchableOpacity>
+                                </View>
                             </View>
-
-                            <View className='justify-center items-center'>
-                                <Image
-                                    source={selImage}
-                                    className='w-11/12 h-11/12 rounded-2xl'
-                                    resizeMode='contain'
-                                />
-                            </View>
-                        </View>
+                        </TouchableOpacity>
                     </View>
                 </Modal>
             )}

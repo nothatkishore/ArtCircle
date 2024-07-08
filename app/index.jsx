@@ -7,10 +7,10 @@ import { Redirect, router } from 'expo-router';
 import TypingText from '../components/TypingText';
 
 const app = () => {
-  const [test, settest] = useState(true)
+  const [test, settest] = useState(false)
 
   if (test) {
-    return <Redirect href='/notification' />;
+    return <Redirect href='/home' />;
   }
 
   const fadeAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
@@ -26,23 +26,14 @@ const app = () => {
         fadeAnim,
         {
           toValue: 1,
-          duration: 3000, // Duration of the logo fade-in
+          duration: 1500, // Duration of the logo fade-in
           useNativeDriver: true,
         }
       ),
-      // Delay to account for text animation completion
-      Animated.delay(100), // Adjust this delay based on TypingText animation duration
-      // Button bounce animation after logo fade-in completes
-      Animated.spring(
-        buttonAnim,
-        {
-          toValue: 1,
-          friction: 5, // Increase friction to slow down the bounce
-          tension: 40,
-          useNativeDriver: true,
-        }
-      ),
+
     ]).start();
+
+    setTimeout(() => router.replace('/signIn'), 2500)
   }, [fadeAnim, buttonAnim]);
 
   return (
@@ -59,24 +50,11 @@ const app = () => {
           <View className='h-[100px]'>
             <View>
               <Text className='text-center text-base w-[200px] font-normal text-white italic'>
-                <TypingText text="Association of Cine and Television Art Directors of Southern India" speed={40} />
+                <TypingText text="Association of Cine and Television Art Directors of Southern India" speed={30} />
               </Text>
             </View>
           </View>
         </View>
-
-        <Animated.View style={{ transform: [{ scale: buttonAnim }], marginTop: 100, width: 200 }}>
-
-          <TouchableOpacity
-            className='bg-[#ffa620] p-[10px] rounded-lg'
-            activeOpacity={0.9}
-            onPress={() => router.push('/signIn')}
-          >
-            <Text className='text-center text-2xl font-normal text-white'>
-              Continue
-            </Text>
-          </TouchableOpacity>
-        </Animated.View>
       </View>
     </SafeAreaView>
   );

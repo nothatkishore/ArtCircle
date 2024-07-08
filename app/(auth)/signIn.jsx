@@ -74,8 +74,8 @@ const signIn = () => {
 
             <TouchableOpacity
               activeOpacity={0.7}
-              // onPress={handlePress}
-              onPress={() => router.push('/home')}
+              onPress={handlePress}
+              // onPress={() => router.push('/home')}
             >
               <View className='bg-[#ffa629] p-2 rounded-lg my-6'>
                 <Text className='text-center text-white text-xl'>

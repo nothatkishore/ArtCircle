@@ -7,7 +7,11 @@ const loan = () => {
   return (
     <SafeAreaView>
       <Header />
-      
+      <View>
+        <Text>
+          
+        </Text>
+      </View>
     </SafeAreaView>
   )
 }

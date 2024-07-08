@@ -40,6 +40,8 @@ const MainLayout = () => {
             {
               height: 60,
               backgroundColor: '#ffa629',
+              borderTopEndRadius : 5,
+              borderTopStartRadius : 5
             }
           }
         }

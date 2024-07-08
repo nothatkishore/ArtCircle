@@ -4,6 +4,13 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import Header from '../../../components/Header'
 import Cards from '../../../components/Cards'
 import searchButton from '../../../assets/icons/searchLocation.png'
+import picture1 from '../../../placeholder/Location/beach.jpg'
+import picture2 from '../../../placeholder/Location/beach2.jpg'
+import picture3 from '../../../placeholder/Location/forest.jpg'
+import picture4 from '../../../placeholder/Location/forest2.jpg'
+import picture5 from '../../../placeholder/Location/palace2.jpg'
+
+
 
 const searchLocation = () => {
   //Make an API request to Backend and store the elements in data
@@ -17,15 +24,27 @@ const searchLocation = () => {
     }
   */
  
-  const data = [{ name: "Kishore", role: "Location" }, { name: "Spot Name can be long too", role: "Location" }, { name: "Spot Name can be long too", role: "Location" }, { name: "Spot Name can be long too", role: "Location" }, { name: "Spot Name can be long too", role: "Location" }, { name: "Spot Name can be long too", role: "Location" }, { name: "Spot Name can be long too", role: "Location" }, { name: "Spot Name can be long too", role: "Location" }]
+  const data = 
+  [
+    { spotName : 'Palace', locationName : 'Pallavaram, Chennai, TN', SpotImage : picture1, locationLink : 'location@maps' },
+    { spotName : 'Beach', locationName : 'Marina, Chennai, TN', SpotImage : picture2, locationLink : 'location@maps' },
+    { spotName : 'Palace', locationName : 'Mysore, Karnataka', SpotImage : picture3, locationLink : 'location@maps' },
+    { spotName : 'Banglow', locationName : 'Guindy, Chennai, TN', SpotImage : picture2, locationLink : 'location@maps' },
+    { spotName : 'Haunted site', locationName : 'Demote colony, Chennai, TN', SpotImage : picture1, locationLink : 'location@maps' },
+    { spotName : 'Forest area', locationName : 'Nandavanam, Chennai, TN', SpotImage : picture2, locationLink : 'location@maps' },
+    { spotName : 'Water falls', locationName : 'Pallakad, Kerala', SpotImage : picture4, locationLink : 'location@maps' },
+    { spotName : 'Beach', locationName : 'Kochi, Kerala', SpotImage : picture1, locationLink : 'location@maps' },
+    { spotName : 'Forest area', locationName : 'Anna nagar, Chennai, TN', SpotImage : picture5, locationLink : 'location@maps' }
+  ]
+
   const renderItems = ({ item }) => (
     <Cards
-      BigText={item.name}
-      SmallText={item.role}
-      xSmallText='Location link'
-      PATH={`spotDetails/${item.name}`}
+      BigText={item.spotName}
+      SmallText={item.locationName}
+      xSmallText={item.locationLink}
+      PATH={`spotDetails/${item.spotName}`}
       flag={true}
-    // image={item.image}
+      image={item.SpotImage}
     />
   )
 
@@ -35,7 +54,7 @@ const searchLocation = () => {
   const handleSearch = (text) =>
   {
     setsearch(text)
-    const NewData = data.filter(item => item.name.toLowerCase().includes(text.toLowerCase()))
+    const NewData = data.filter(item => item.spotName.toLowerCase().includes(text.toLowerCase()))
     setFilteredData(NewData)
   }
 

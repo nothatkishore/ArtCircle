@@ -24,7 +24,7 @@ const Cards = ({ image, BigText, SmallText, xSmallText, PATH, flag }) => {
                             <View className='w-1/2 h-full items-end'>
                                 <Image
                                     source={image || placeHolder}
-                                    className='h-[120px] w-[120px] rounded-full'
+                                    className='h-[120px] w-[120px] rounded-md'
                                     resizeMode='cover'
                                 />
                             </View>

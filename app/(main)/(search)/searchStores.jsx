@@ -4,16 +4,32 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import Header from '../../../components/Header'
 import Cards from '../../../components/Cards'
 import searchButton from '../../../assets/icons/find-store.png'
+import picture1 from '../../../placeholder/Products/AK117.jpeg'
+import picture2 from '../../../placeholder/Products/bike_engine.jpg'
+import picture4 from '../../../placeholder/Products/sniper.jpeg'
+import picture5 from '../../../placeholder/Products/M4A1.jpeg'
+
+
 
 const searchProducts = () => {
-  const data = [{ name: "Apple", role: "Apple stores" }, { name: "Ball", role: "Ball stores" }, { name: "Cat", role: "Cat stores" }, { name: "Dog", role: "Dog stores" }, { name: "Elephant", role: "Elephant stores" }, { name: "Fruits", role: "Fruit stores" }, { name: "Hen", role: "Hen stores" }, { name: "Product Name", role: "Store Name" }]
+  const data = [
+    { productName: 'AK117', shopName: 'Gun Shops', shopLocation: 'chennai, TN', productImage: picture1 },
+    { productName: 'M4A1', shopName: 'Besert Shop', shopLocation: 'chennai, TN', productImage: picture2 },
+    { productName: 'Dummy Knife', shopName: 'XYZ Shops', shopLocation: 'chennai, TN', productImage: picture5 },
+    { productName: 'Bike engine', shopName: 'locertk Shops', shopLocation: 'chennai, TN', productImage: picture4 },
+    { productName: 'Magic Stick', shopName: 'Mckid Shops', shopLocation: 'chennai, TN', productImage: picture5 },
+    { productName: 'Dummy Pistol', shopName: 'random12 Shops', shopLocation: 'chennai, TN', productImage: picture1 },
+    { productName: 'Dummy sniper', shopName: 'vercel Shops', shopLocation: 'chennai, TN', productImage: picture2 }
+  ]
+
   const renderItems = ({ item }) => (
     <Cards
-      BigText={item.role}
-      SmallText={item.name}
-      xSmallText='Location link'
-      PATH={`productDetails/${item.role}`}
+      BigText={item.productName}
+      SmallText={item.shopName}
+      xSmallText={item.shopLocation}
+      PATH={`productDetails/${item.shopName}`}
       flag={true}
+      image={item.productImage}
     />
   )
 

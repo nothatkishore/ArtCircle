@@ -7,15 +7,15 @@ const RootLayout = () => {
     return (
 
         <>
-           <Provider store={store}>
-            <Stack>
+            <Provider store={store}>
+                <Stack>
                     <Stack.Screen name="index" options={{ headerShown: false }} />
                     <Stack.Screen name="(auth)" options={{ headerShown: false }} />
                     <Stack.Screen name="(main)" options={{ headerShown: false }} />
                     <Stack.Screen name="(profile)" options={{ headerShown: false }} />
                 </Stack>
-                <StatusBar style="light" backgroundColor="#ffa629" />
-           </Provider>
+                <StatusBar style="light" backgroundColor="#0000" />
+            </Provider>
         </>
 
     )

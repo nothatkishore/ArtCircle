@@ -11,7 +11,7 @@ const Header = () => {
   const router = useRouter(); // Use useRouter as a hook
 
   return (
-    <View className="flex-row p-3 border-b-[1px] border-b-slate-200 mb-2 items-center justify-between bg-[#ffa629]">
+    <View className="flex-row p-3 border-b-[1px] rounded-b-lg border-b-slate-200 items-center justify-between bg-[#ffa629]">
       <View>
         <TouchableOpacity
           activeOpacity={0.8}
