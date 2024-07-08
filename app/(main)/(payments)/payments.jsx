@@ -13,7 +13,7 @@ const payments = () => {
       <SafeAreaView className="w-full h-full bg-[#f0f3f6]">
         <Header />
         <ScrollView>
-          <View className="w-full h-full">
+          <View className="w-full h-full mt-7">
             <ClickOption
               name='Membership renewal'
               icon={renew}
