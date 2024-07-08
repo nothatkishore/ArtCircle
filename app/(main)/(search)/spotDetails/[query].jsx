@@ -1,9 +1,7 @@
 import { View, Text, Image, FlatList, TouchableOpacity, Modal } from 'react-native';
 import { React, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import sample from '../../../../assets/images/placeHolder.jpg';
 import Header from '../../../../components/Header';
-import close from '../../../../assets/icons/close.png'
 import { useLocalSearchParams } from 'expo-router';
 import picture1 from '../../../../placeholder/Location/beach.jpg'
 import picture2 from '../../../../placeholder/Location/beach2.jpg'
@@ -88,15 +86,11 @@ const spotDetails = () => {
                                 <Text className='font-normal'> +91 98989898901 </Text>
                             </Text>
 
-                            <View className='bg-blue-200 p-3 mt-3 rounded-md'>
+                            <View className='bg-blue-200 p-3 my-3 rounded-md'>
                                 <Text className='text-sm font-medium'>Description :
                                     <Text className='font-normal'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deleniti amet magnam earum ipsam atque commodi, totam sint quibusdam fugiat. Dolores, ipsa quam? Accusantium aliquid voluptates sunt officia? Atque, aut. </Text>
                                 </Text>
                             </View>
-                        </View>
-
-                        <View className='bg-gray-50 m-7 p-3 rounded-lg shadow-2xl shadow-blue-500'>
-                            <Text className='text-center text-xl'>Images</Text>
                         </View>
                     </>
                 )}

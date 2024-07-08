@@ -27,7 +27,7 @@ const searchProducts = () => {
       BigText={item.productName}
       SmallText={item.shopName}
       xSmallText={item.shopLocation}
-      PATH={`productDetails/${item.shopName}`}
+      PATH={`productSpecs/${item.productName}`}
       flag={true}
       image={item.productImage}
     />

@@ -11,17 +11,19 @@ const search = () => {
   return (
     <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
       <Header />
-      <ClickOption 
-        name='Search locations'
-        icon={map}
-        handlePress={() => router.push('/searchLocation')}
-      />
-      
-      <ClickOption 
-        name='Search stores'
-        icon={art}
-        handlePress={() => router.push('/searchStores')}
-      />
+      <View className='mt-7 mx-2 '>
+        <ClickOption
+          name='Search locations'
+          icon={map}
+          handlePress={() => router.push('/searchLocation')}
+        />
+
+        <ClickOption
+          name='Search stores'
+          icon={art}
+          handlePress={() => router.push('/searchStores')}
+        />
+      </View>
     </SafeAreaView>
   )
 }

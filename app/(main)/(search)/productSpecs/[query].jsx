@@ -56,7 +56,7 @@ const ProductDetails = () => {
 
             <View className='bg-slate-50  rounded-xl shadow-2xl p-2 m-4'>
                 <Text className='text-2xl font-normal text-center'>
-                    Product Name
+                    {query}
                 </Text>
             </View>
 

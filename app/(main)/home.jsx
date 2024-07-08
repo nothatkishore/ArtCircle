@@ -234,7 +234,7 @@ const home = () => {
               />
             </View>
             <View className="p-5 w-full rounded-xl my-2 bg-slate-50 shadow-lg shadow-orange-400  flex-row justify-between items-center">
-              <Text className="items-center text-center w-full  text-2xl ">
+              <Text className="items-center text-center w-full text-2xl ">
                 Recent Locations
               </Text>
             </View>
