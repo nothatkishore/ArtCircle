@@ -13,7 +13,17 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kishorear.ACTADSI",
+      "buildNumber": "1.0.0",
+      "icon": "./assets/art-dir-1.png",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to scan QR codes."
+      },
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "minimumOsVersion": "12.0"
     },
     "android": {
       "adaptiveIcon": {

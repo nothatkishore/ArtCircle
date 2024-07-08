@@ -14,6 +14,12 @@ const profile = () => {
     const profile = useSelector((state) => state.user.profile)
     const dispatch = useDispatch()
 
+    const logout = () =>
+    {
+        router.dismissAll()
+        router.replace('/signIn')
+    }
+
     const handlePress = async () => {
         if (!edit)
             return
@@ -142,7 +148,8 @@ const profile = () => {
                 <TouchableOpacity
                     activeOpacity={0.7}
                     className='w-full mt-5'
-                    onPress={() => router.replace('/signIn')}
+                    // onPress={() => router.canGoBack}
+                    onPress={logout}
                 >
                     <View className='rounded-lg w-full bg-red-500'>
                         <Text className='p-2 text-white text-base font-medium text-center'>
