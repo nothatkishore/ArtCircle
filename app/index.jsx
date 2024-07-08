@@ -7,10 +7,10 @@ import { Redirect, router } from 'expo-router';
 import TypingText from '../components/TypingText';
 
 const app = () => {
-  const [test, settest] = useState(true)
+  const [test, settest] = useState(false)
 
   if (test) {
-    return <Redirect href='/profile' />;
+    return <Redirect href='/home' />;
   }
 
   const fadeAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
