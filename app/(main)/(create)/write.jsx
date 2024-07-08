@@ -21,8 +21,8 @@ const addMovies = () => {
     return (
         <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
             <Header />
-            <Text className='text-black text-center text-2xl font-light pb-2'>
-                Write content
+            <Text className='text-white m-4 p-2 rounded-lg text-center text-xl font-light bg-gray-700'>
+                Write a micro blog
             </Text>
             <ScrollView className='h-full w-full'>
 
@@ -57,11 +57,11 @@ const addMovies = () => {
                 </View>
 
 
-                <View className='my-10 bg-orange-600 mx-3 p-2 rounded-xl'>
+                <View className='my-10 bg-orange-600 mx-3 p-3 rounded-xl'>
                     <TouchableOpacity
                         activeOpacity={0.7}
                     >
-                        <Text className='text-white text-center'>
+                        <Text className='text-white text-base text-center'>
                             Publish
                         </Text>
                     </TouchableOpacity>

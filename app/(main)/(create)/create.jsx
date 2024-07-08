@@ -17,32 +17,32 @@ const create = () => {
       <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
         <Header />
         <ScrollView className='h-full w-full'>
-          <View className='h-full w-full'>
+          <View className='h-full w-full mt-7'>
 
-          <ClickOption 
+            <ClickOption
               name='Add Members'
               icon={addM}
               handlePress={() => router.push('/addMember')}
-          />
+            />
 
-          <ClickOption 
+            <ClickOption
               name='Add Project'
               icon={movie}
               handlePress={() => router.push('/addMovies')}
-          />
+            />
 
-          <ClickOption 
+            <ClickOption
               name='Post Pictures'
               icon={setP}
               handlePress={() => router.push('/addSetprops')}
-          />
+            />
 
-          <ClickOption 
+            <ClickOption
               name='Post Blog'
               icon={write}
               handlePress={() => router.push('/write')}
-          />
-      
+            />
+
 
           </View>
         </ScrollView>

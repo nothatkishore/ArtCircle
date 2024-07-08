@@ -10,10 +10,10 @@ import * as ImagePicker from 'expo-image-picker'
 const addMovies = () => {
 
     const [form, setform] = useState(
-    {
-        movieName: '',
-        setImage: ''
-    })
+        {
+            movieName: '',
+            setImage: ''
+        })
 
     const handlePost = () => {
         // post request
@@ -51,8 +51,8 @@ const addMovies = () => {
     return (
         <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
             <Header />
-            <Text className='text-black text-center text-2xl font-light pb-2'>
-                Add Pictures
+            <Text className='text-white m-4 p-2 rounded-lg text-center text-xl font-light bg-gray-700'>
+                Upload set pictures
             </Text>
             <View className='h-full w-full'>
 
@@ -91,7 +91,7 @@ const addMovies = () => {
                                     className='h-10 w-10 mx-2'
                                     resizeMode='contain'
                                 />
-                                <Text className='text-white font-bold'>Upload</Text>
+                                <Text className='text-white font-bold'>Add Pictures</Text>
                             </View>
                         </TouchableOpacity>
                     </View>
@@ -113,13 +113,13 @@ const addMovies = () => {
                 </View>
 
 
-                <View className='my-10 bg-orange-600 mx-3 p-2 rounded-xl'>
+                <View className='my-10 bg-orange-600 mx-3 p-3 rounded-xl'>
                     <TouchableOpacity
                         activeOpacity={0.7}
                         onPress={handlePost}
                     >
-                        <Text className='text-white text-center'>
-                            Add Picture
+                        <Text className='text-white text-center text-base'>
+                            Upload
                         </Text>
                     </TouchableOpacity>
                 </View>
