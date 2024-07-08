@@ -1,14 +1,23 @@
-import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, Alert } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, Alert, Image } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
 import { Link, router } from 'expo-router'
+import hide from '../../assets/icons/hide.png'
+import view from '../../assets/icons/view.png'
 
 const signIn = () => {
   const [form, setForm] = useState({
     username: '',
     password: ''
   })
+
+  const [visible, setVisible] = useState(false)
+
+  const passVisibility = () =>
+  {
+    setVisible(!visible)
+  }
 
   const handlePress = () => {
     if (form.username === '' || form.password.length < 0) {
@@ -54,12 +63,22 @@ const signIn = () => {
               />
             </View>
 
-            <View className='bg-slate-50 shadow-lg p-2 rounded-lg my-3 border'>
+            <View className='bg-slate-50 shadow-lg p-2 rounded-lg my-3 border flex-row justify-center items-center'>
               <TextInput
                 placeholder='Enter password'
+                secureTextEntry={!visible}
                 onChangeText={(text) => setForm({ ...form, password: text })}
                 value={form.password}
+                className='flex-1'
               />
+              <TouchableOpacity
+                onPress={passVisibility}
+              >
+                <Image 
+                  source={visible ? hide : view}
+                  className='h-6 w-6 mr-2 opacity-50'
+                />
+              </TouchableOpacity>
             </View>
 
 
@@ -75,7 +94,6 @@ const signIn = () => {
             <TouchableOpacity
               activeOpacity={0.7}
               onPress={handlePress}
-              // onPress={() => router.push('/home')}
             >
               <View className='bg-[#ffa629] p-2 rounded-lg my-6'>
                 <Text className='text-center text-white text-xl'>
