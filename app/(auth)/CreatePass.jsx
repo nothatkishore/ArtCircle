@@ -48,11 +48,11 @@ const forgotPass = () => {
 
             <TouchableOpacity
               activeOpacity={0.7}
-              onPress={() => router.replace('/home')}
+              onPress={() => router.replace('/signIn')}
             >
               <View className='bg-[#ffa629] p-2 rounded-lg my-6'>
                 <Text className='text-center text-white text-xl'>
-                  Create and Login
+                  Create password
                 </Text>
               </View>
             </TouchableOpacity>

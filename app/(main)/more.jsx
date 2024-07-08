@@ -7,19 +7,15 @@ import user from '../../assets/icons/user.png'
 import setP from '../../assets/icons/setP.png'
 import project from '../../assets/icons/project.png'
 import publishPost from '../../assets/icons/publishPost.png'
-import productDetails from '../../assets/icons/productDetails.png'
 import map from '../../assets/icons/map.png'
 import searchProducts from '../../assets/icons/searchProducts.png'
-import spotDetails from '../../assets/icons/spotDetails.png'
 import loan from '../../assets/icons/loan.png'
 import renewal from '../../assets/icons/renewal.png'
 import payments from '../../assets/icons/payments.png'
 import { router } from "expo-router";
-import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 
 const more = () => {
-  const [Visible, setVisible] = useState(true)
   return (
     <SafeAreaView className='h-full w-full bg-[#f0f3f6]'>
       <View className="w-full h-auto bg-[#ffa629] rounded-b-md">
