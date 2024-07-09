@@ -10,7 +10,7 @@ const app = () => {
   const [test, settest] = useState(true)
 
   if (test) {
-    return <Redirect href='/spotDetails/sample' />;
+    return <Redirect href='/productSpecs/sample' />;
   }
 
   const fadeAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
