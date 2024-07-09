@@ -16,10 +16,14 @@ const addMovies = () => {
       projecType: '',
       designation: '',
       productionName: '',
-      producerName: '',
       directorName: '',
       salary: '',
     })
+
+    const handlePress = () =>
+    {
+      console.log(form)
+    }
 
   return (
     <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
@@ -33,7 +37,7 @@ const addMovies = () => {
           <Text className='text-black'>Project name:</Text>
           <View className='mt-2 bg-gray-50 rounded-xl border'>
             <TextInput
-              className='p-2'
+              className='p-3'
               placeholder='Project name'
               value={form.projectName}
               onChangeText={(value) => setform({ ...form, projectName: value })}
@@ -71,7 +75,7 @@ const addMovies = () => {
         </View>
 
         <View className='m-3'>
-          <Text className='text-black'>Production name:</Text>
+          <Text className='text-black'>Production House:</Text>
           <View className='mt-2 bg-gray-50 rounded-xl border'>
             <TextInput
               className='p-2'
@@ -82,17 +86,6 @@ const addMovies = () => {
           </View>
         </View>
 
-        <View className='m-3'>
-          <Text className='text-black'>Producer name:</Text>
-          <View className='mt-2 bg-gray-50 rounded-xl border'>
-            <TextInput
-              className='p-2'
-              placeholder='Producer name'
-              value={form.producerName}
-              onChangeText={(value) => setform({ ...form, producerName: value })}
-            />
-          </View>
-        </View>
 
         <View className='m-3'>
           <Text className='text-black'>Director name:</Text>
@@ -122,13 +115,13 @@ const addMovies = () => {
         <View className='my-10 bg-orange-600 mx-3 p-3 rounded-lg'>
           <TouchableOpacity
             activeOpacity={0.7}
+            onPress={handlePress}
           >
             <Text className='text-white text-base text-center'>
               Add Project
             </Text>
           </TouchableOpacity>
         </View>
-
 
       </ScrollView>
     </SafeAreaView>
