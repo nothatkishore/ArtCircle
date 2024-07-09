@@ -26,22 +26,23 @@ const searchLocation = () => {
  
   const data = 
   [
-    { spotName : 'Palace', locationName : 'Pallavaram, Chennai, TN', SpotImage : picture1, locationLink : 'location@maps' },
-    { spotName : 'Beach', locationName : 'Marina, Chennai, TN', SpotImage : picture2, locationLink : 'location@maps' },
-    { spotName : 'Palace', locationName : 'Mysore, Karnataka', SpotImage : picture3, locationLink : 'location@maps' },
-    { spotName : 'Banglow', locationName : 'Guindy, Chennai, TN', SpotImage : picture2, locationLink : 'location@maps' },
-    { spotName : 'Haunted site', locationName : 'Demote colony, Chennai, TN', SpotImage : picture1, locationLink : 'location@maps' },
-    { spotName : 'Forest area', locationName : 'Nandavanam, Chennai, TN', SpotImage : picture2, locationLink : 'location@maps' },
-    { spotName : 'Water falls', locationName : 'Pallakad, Kerala', SpotImage : picture4, locationLink : 'location@maps' },
-    { spotName : 'Beach', locationName : 'Kochi, Kerala', SpotImage : picture1, locationLink : 'location@maps' },
-    { spotName : 'Forest area', locationName : 'Anna nagar, Chennai, TN', SpotImage : picture5, locationLink : 'location@maps' }
+    { spotName : 'Palace', locationName : 'Pallavaram, Chennai, TN', SpotImage : picture1, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+    { spotName : 'Beach', locationName : 'Marina, Chennai, TN', SpotImage : picture2, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+    { spotName : 'Palace', locationName : 'Mysore, Karnataka', SpotImage : picture3, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+    { spotName : 'Banglow', locationName : 'Guindy, Chennai, TN', SpotImage : picture2, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+    { spotName : 'Haunted site', locationName : 'Demote colony, Chennai, TN', SpotImage : picture1, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+    { spotName : 'Forest area', locationName : 'Nandavanam, Chennai, TN', SpotImage : picture2, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+    { spotName : 'Water falls', locationName : 'Pallakad, Kerala', SpotImage : picture4, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+    { spotName : 'Beach', locationName : 'Kochi, Kerala', SpotImage : picture1, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+    { spotName : 'Forest area', locationName : 'Anna nagar, Chennai, TN', SpotImage : picture5, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' }
   ]
 
   const renderItems = ({ item }) => (
     <Cards
       BigText={item.spotName}
       SmallText={item.locationName}
-      xSmallText={item.locationLink}
+      xSmallText='🧭 View on maps'
+      ExPATH={item.locationLink}
       PATH={`spotDetails/${item.spotName}`}
       flag={true}
       image={item.SpotImage}

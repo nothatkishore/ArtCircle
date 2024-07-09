@@ -13,20 +13,21 @@ import picture5 from '../../../placeholder/Products/M4A1.jpeg'
 
 const searchProducts = () => {
   const data = [
-    { productName: 'AK117', shopName: 'Gun Shops', shopLocation: 'chennai, TN', productImage: picture1 },
-    { productName: 'M4A1', shopName: 'Besert Shop', shopLocation: 'chennai, TN', productImage: picture2 },
-    { productName: 'Dummy Knife', shopName: 'XYZ Shops', shopLocation: 'chennai, TN', productImage: picture5 },
-    { productName: 'Bike engine', shopName: 'locertk Shops', shopLocation: 'chennai, TN', productImage: picture4 },
-    { productName: 'Magic Stick', shopName: 'Mckid Shops', shopLocation: 'chennai, TN', productImage: picture5 },
-    { productName: 'Dummy Pistol', shopName: 'random12 Shops', shopLocation: 'chennai, TN', productImage: picture1 },
-    { productName: 'Dummy sniper', shopName: 'vercel Shops', shopLocation: 'chennai, TN', productImage: picture2 }
+    { productName: 'AK117', shopName: 'Gun Shops', shopLocation: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu', productImage: picture1 },
+    { productName: 'M4A1', shopName: 'Besert Shop', shopLocation: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu', productImage: picture2 },
+    { productName: 'Dummy Knife', shopName: 'XYZ Shops', shopLocation: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu', productImage: picture5 },
+    { productName: 'Bike engine', shopName: 'locertk Shops', shopLocation: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu', productImage: picture4 },
+    { productName: 'Magic Stick', shopName: 'Mckid Shops', shopLocation: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu', productImage: picture5 },
+    { productName: 'Dummy Pistol', shopName: 'random12 Shops', shopLocation: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu', productImage: picture1 },
+    { productName: 'Dummy sniper', shopName: 'vercel Shops', shopLocation: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu', productImage: picture2 }
   ]
 
   const renderItems = ({ item }) => (
     <Cards
       BigText={item.productName}
       SmallText={item.shopName}
-      xSmallText={item.shopLocation}
+      xSmallText='🧭 View on Maps'
+      ExPATH={item.shopLocation}
       PATH={`productSpecs/${item.productName}`}
       flag={true}
       image={item.productImage}

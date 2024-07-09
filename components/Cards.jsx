@@ -2,9 +2,10 @@ import { View, Text, ImageBackground, TouchableOpacity, Image } from 'react-nati
 import React from 'react'
 import { router } from 'expo-router'
 import placeHolder from '../assets/images/placeHolder.jpg'
+import { Link } from 'expo-router'
 
 
-const Cards = ({ image, BigText, SmallText, xSmallText, PATH, flag }) => {
+const Cards = ({ image, BigText, SmallText, xSmallText, PATH, flag, ExPATH }) => {
     return (
         <TouchableOpacity
             activeOpacity={0.8}
@@ -15,7 +16,12 @@ const Cards = ({ image, BigText, SmallText, xSmallText, PATH, flag }) => {
                     <View className={`${flag ? 'w-1/2' : 'w-full p-2'}`}>
                         <Text className='text-xl text-black font-semibold'>{BigText || 'Chennai'}</Text>
                         <Text className='text-base font-light text-black'>{SmallText || 'Location'}</Text>
-                        <Text className='text-sm font-light text-black'>{xSmallText || ''}</Text>
+                        <Link
+                            href={ExPATH || ''}
+                            className='mt-1 text-gray-500 font-semibold text-[13px]'
+                        >
+                            {xSmallText || ''}
+                        </Link>
                     </View>
 
                     {

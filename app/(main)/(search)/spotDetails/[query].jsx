@@ -1,5 +1,6 @@
 import { View, Text, Image, FlatList, TouchableOpacity, Modal } from 'react-native';
 import { React, useState } from 'react';
+import { Link } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../../../../components/Header';
 import { useLocalSearchParams } from 'expo-router';
@@ -16,7 +17,7 @@ const spotDetails = () => {
     //use this query keyword to make a API request
 
     const data = [
-        { id: 1, image: picture1 },
+        { id: 1, image: picture1, location: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
         { id: 2, image: picture2 },
         { id: 3, image: picture3 },
         { id: 4, image: picture4 },
@@ -28,7 +29,7 @@ const spotDetails = () => {
         { id: 10, image: picture5 },
         { id: 11, image: picture1 },
         { id: 12, image: picture2 }
-    ];
+    ];  //While constructing API send location details with first object alone.
 
     const [modalVisible, setModalVisible] = useState(false);
     const [selImage, setSelImage] = useState(null);
@@ -72,26 +73,37 @@ const spotDetails = () => {
                 renderItem={renderItems}
                 ListHeaderComponent={() => (
                     <>
-                        <View className='bg-slate-50 rounded-xl shadow-2xl p-5 m-4 h-auto space-y-1'>
-                            <Text className='text-sm font-medium'>Find on maps :
-                                <Text className='font-normal'> Location link</Text>
-                            </Text>
-                            <Text className='text-sm font-medium'>Active days :
-                                <Text className='font-normal text-xs'> Mon, Tue, Wed, Thu, Fri, Sat and Sun </Text>
-                            </Text>
-                            <Text className='text-sm font-medium'>Active hours :
-                                <Text className='font-normal'> 9:00 AM - 5:00 PM</Text>
-                            </Text>
-                            <Text className='text-sm font-medium'>Contact :
-                                <Text className='font-normal'> +91 98989898901 </Text>
-                            </Text>
-
-                            <View className='bg-blue-200 p-3 my-3 rounded-md'>
-                                <Text className='text-sm font-medium'>Description :
+                        <View className='bg-slate-50 rounded-xl shadow-2xl p-5 m-4 h-auto'>
+                            <View className='space-y-1'>
+                                <Text className='text-[15px] font-medium'>Full Address :
+                                    <Text className='font-normal'> addres of the mentioned Location goes here. It can be of any length.</Text>
+                                </Text>
+                                <Text className='text-[15px] font-medium'>Contact :
+                                    <Text className='font-normal text-[14px]'> +91 123456789, 044 123456789, +91 980392352123 </Text>
+                                </Text>
+                                <Text className='text-[15px] font-medium'>Description :
                                     <Text className='font-normal'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deleniti amet magnam earum ipsam atque commodi, totam sint quibusdam fugiat. Dolores, ipsa quam? Accusantium aliquid voluptates sunt officia? Atque, aut. </Text>
                                 </Text>
                             </View>
+
+                            <View className='mt-4 items-center justify-center'>
+                                <Link
+                                    href={data[0].location || ''}
+                                >
+                                    <View className='bg-slate-200 items-center justify-center p-3 mt-4 rounded-xl'>
+                                        <Text className='text-gray-500 text-[14px]'>
+                                            View on maps 🧭
+                                        </Text>
+                                    </View>
+                                </Link>
+                            </View>
                         </View>
+                        <View className='bg-slate-50 rounded-xl shadow-xl p-2 m-4'>
+                            <Text className='text-xl font-normal text-center'>
+                                {query} pictures
+                            </Text>
+                        </View>
+
                     </>
                 )}
             />
