@@ -4,14 +4,14 @@ import { Link } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Header from '../../../../components/Header';
 import { useLocalSearchParams } from 'expo-router';
-import picture1 from '../../../../placeholder/Location/beach.jpg'
-import picture2 from '../../../../placeholder/Location/beach2.jpg'
-import picture3 from '../../../../placeholder/Location/forest.jpg'
-import picture4 from '../../../../placeholder/Location/forest2.jpg'
-import picture5 from '../../../../placeholder/Location/palace2.jpg'
+import picture1 from '../../../../placeholder/Products/AK117.jpeg'
+import picture2 from '../../../../placeholder/Products/bike_engine.jpg'
+import picture3 from '../../../../placeholder/Products/sniper.jpeg'
+import picture4 from '../../../../placeholder/Products/M4A1.jpeg'
+import picture5 from '../../../../placeholder/Products/pistol.jpg'
 
 
-const spotDetails = () => {
+const ProductDetails = () => {
     const { query } = useLocalSearchParams()
     //use this query keyword to make a API request
 
@@ -73,7 +73,7 @@ const spotDetails = () => {
                 ListHeaderComponent={() => (
                     <>
                         <View className='bg-slate-50 rounded-xl shadow-2xl p-5 m-4 h-auto'>
-                            <View className='space-y-1'>
+                            <View className='space-y-3'>
                                 <Text className='text-[15px] font-medium'>Full Address :
                                     <Text className='font-normal'> addres of the mentioned Location goes here. It can be of any length.</Text>
                                 </Text>
@@ -138,4 +138,4 @@ const spotDetails = () => {
     );
 };
 
-export default spotDetails;
+export default ProductDetails;
