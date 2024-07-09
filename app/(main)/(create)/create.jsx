@@ -20,7 +20,7 @@ const create = () => {
           <View className='h-full w-full mt-7'>
 
             <ClickOption
-              name='Add Members'
+              name='Add Members (Admin)'
               icon={addM}
               handlePress={() => router.push('/addMember')}
             />
@@ -32,15 +32,21 @@ const create = () => {
             />
 
             <ClickOption
+              name='Add Project (Admin)'
+              icon={movie}
+              handlePress={() => router.push('/addMoviesAdmin')}
+            />
+
+            <ClickOption
               name='Post Pictures'
               icon={setP}
               handlePress={() => router.push('/addSetprops')}
             />
 
             <ClickOption
-              name='Post Blog'
-              icon={write}
-              handlePress={() => router.push('/write')}
+              name='Post Pictures (Admin)'
+              icon={setP}
+              handlePress={() => router.push('/addSetpropsAdmin')}
             />
 
 

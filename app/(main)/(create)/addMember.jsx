@@ -79,10 +79,15 @@ const addMember = () => {
     setShow(true)
   }
 
+  const removeImage = () =>
+  {
+    setform((prev) =>({...prev, profile : null}))
+  }
+
   return (
     <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
       <Header />
-      <Text className='text-white m-4 p-2 rounded-lg text-center text-2xl font-light bg-gray-700'>
+      <Text className='text-white m-4 p-2 rounded-lg text-center text-xl font-light bg-gray-700'>
         Add Member details
       </Text>
       <ScrollView className='h-full w-full'>
@@ -90,14 +95,27 @@ const addMember = () => {
           <Text className='text-black'>Profile picture</Text>
           <View className='mt-2 items-center border rounded-xl p-2'>
             <TouchableOpacity
-              activeOpacity={0.7}
-              onPress={uploadImage}
+              onPress={removeImage}
             >
               <Image
-                source={form.profile ? { uri: form.profile } : profile}
+                source={{ uri: form.profile }}
                 resizeMode='contain'
                 className='h-24 w-24'
               />
+            </TouchableOpacity>
+            <TouchableOpacity
+              activeOpacity={0.7}
+              onPress={uploadImage}
+              className={form.profile ? 'hidden' : ''}
+            >
+              <View className='flex-row justify-center items-center p-1 bg-white rounded m-2'>
+                <Image
+                  source={profile}
+                  resizeMode='contain'
+                  className='h-7 w-7'
+                />
+                <Text>Upload</Text>
+              </View>
             </TouchableOpacity>
           </View>
         </View>

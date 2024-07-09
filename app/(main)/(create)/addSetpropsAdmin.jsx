@@ -11,17 +11,12 @@ const addMovies = () => {
 
     const [form, setform] = useState(
         {
+            artistId: '',
+            artistName: '',
             movieName: '',
             setImage: '',
             projectType: ''
         })
-
-    const handlePost = () => {
-        // post request
-        console.log('Data posted')
-    }
-
-    const [image, setimage] = useState([])
 
     const projectsActive =
         [
@@ -32,6 +27,16 @@ const addMovies = () => {
             { projectId: 5, projectName: 'Movie 5' },
             { projectId: 6, projectName: 'Movie 6' }
         ]
+
+
+
+
+    const handlePost = () => {
+        // post request
+        console.log('Data posted')
+    }
+
+    const [image, setimage] = useState([])
 
     const handlePress = async () => {
         const permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync()
@@ -66,24 +71,48 @@ const addMovies = () => {
                 Upload set pictures
             </Text>
             <ScrollView>
-                <View className='h-full w-full'>
-                    <View className='m-3'>
-                        <Text className='text-black'>Project name:</Text>
-                        <View className='bg-white rounded-xl mt-2 border'>
-                            <Picker
-                                selectedValue={form.movieName}
-                                onValueChange={(value, index) => setform({ ...form, movieName: value })}
-                            >
-                                {
-                                    projectsActive.map((value) => (
-                                        <Picker.Item key={value.id} label={value.projectName} value={value.projectName} />
-                                    ))
-                                }
-                            </Picker>
-                        </View>
+                <View className='m-3'>
+                    <Text className='text-black'>Member id:</Text>
+                    <View className='mt-2 bg-gray-50 rounded-xl border'>
+                        <TextInput
+                            className='p-3'
+                            placeholder='Member Id'
+                            value={form.artistId}
+                            onChangeText={(value) => setform({ ...form, artistId: value })}
+                            keyboardType='numeric'
+                        />
                     </View>
+                </View>
 
-                    <View className='m-3'>
+                <View className='m-3'>
+                    <Text className='text-black'>Member name:</Text>
+                    <View className='mt-2 bg-gray-50 rounded-xl border'>
+                        <TextInput
+                            className='p-3'
+                            placeholder='Member name'
+                            value={form.artistName}
+                            onChangeText={(value) => setform({ ...form, artistName: value })}
+                        />
+                    </View>
+                </View>
+
+                <View className='m-3'>
+                    <Text className='text-black'>Project name:</Text>
+                    <View className='bg-white rounded-xl mt-2 border'>
+                        <Picker
+                            selectedValue={form.movieName}
+                            onValueChange={(value, index) => setform({ ...form, movieName: value })}
+                        >
+                            {
+                                projectsActive.map((value) => (
+                                    <Picker.Item key={value.id} label={value.projectName} value={value.projectName} />
+                                ))
+                            }
+                        </Picker>
+                    </View>
+                </View>
+
+                <View className='m-3'>
                         <Text className='text-black'>Project type:</Text>
                         <View className='bg-white rounded-xl mt-2 border'>
                             <Picker
@@ -97,6 +126,8 @@ const addMovies = () => {
                         </View>
                     </View>
 
+
+                <View className='h-full w-full'>
 
                     <View className='m-3'>
                         <Text className='text-black'>Upload pictures</Text>
@@ -138,6 +169,8 @@ const addMovies = () => {
                             </TouchableOpacity>
                         </View>
                     </View>
+
+                    
 
 
                     <View className='my-10 bg-orange-600 mx-3 p-3 rounded-xl'>
