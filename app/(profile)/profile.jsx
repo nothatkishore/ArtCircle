@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import profilePic from '../../assets/icons/user.png'
+import { router } from 'expo-router'
 
 const profile = () => {
 
@@ -77,8 +78,10 @@ const profile = () => {
                                     <Text className='text-white text-xs text-center'>Edit</Text>
                                 </View>
                             </TouchableOpacity>
+
                             <TouchableOpacity
                                 activeOpacity={0.7}
+                                onPress={() => router.replace('/CreatePass')}
                             >
                                 <View className='bg-green-500 py-3 px-3 rounded-xl'>
                                     <Text className='text-white text-xs text-center'>Change password</Text>
@@ -86,6 +89,7 @@ const profile = () => {
                             </TouchableOpacity>
                             <TouchableOpacity
                                 activeOpacity={0.7}
+                                onPress={() => router.replace('/signIn')}
                             >
                                 <View className='bg-red-500 py-3 px-3 rounded-xl text-center'>
                                     <Text className='text-white text-xs text-center'>Logout</Text>
