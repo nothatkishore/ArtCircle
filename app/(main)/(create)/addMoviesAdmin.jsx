@@ -3,7 +3,10 @@ import { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Header from '../../../components/Header'
 import { Picker } from '@react-native-picker/picker';
-import profile from '../../../assets/icons/photo.png'
+import dateP from '../../../assets/icons/july.png'
+import DateTimePicker from '@react-native-community/datetimepicker';
+
+
 
 //  Form validation
 //  API requests
@@ -12,20 +15,35 @@ const addMovies = () => {
 
     const [form, setform] = useState(
         {
-            artistId: '',
             artistName: '',
             projectName: '',
             projecType: '',
             designation: '',
             productionName: '',
-            producerName: '',
             directorName: '',
-            salary: '',
+            projectDate: '',
+            salary: ''
         })
+    const [show, setShow] = useState(false)
+    const [date, setDate] = useState(new Date())
 
-    const handlePress = () => {
+    const onChange = (event, selectedDate) => {
+        const currentDate = selectedDate || date;
+        setShow(false);
+        setDate(currentDate);
+        setform((prev) => ({ ...prev, projectDate: currentDate.toDateString() }));
+    };
+
+    //API request should go from here
+    const handlePress = () => 
+    {
         console.log(form)
     }
+
+    const openDatePicker = () => {
+        setShow(true)
+    }
+
 
     return (
         <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
@@ -35,19 +53,7 @@ const addMovies = () => {
             </Text>
             <ScrollView className='h-full w-full'>
 
-                <View className='m-3'>
-                    <Text className='text-black'>Member id:</Text>
-                    <View className='mt-2 bg-gray-50 rounded-xl border'>
-                        <TextInput
-                            className='p-3'
-                            placeholder='Member Id'
-                            value={form.artistId}
-                            onChangeText={(value) => setform({ ...form, artistId: value })}
-                            keyboardType='numeric'
-                        />
-                    </View>
-                </View>
-
+                {/* Member name */}
                 <View className='m-3'>
                     <Text className='text-black'>Member name:</Text>
                     <View className='mt-2 bg-gray-50 rounded-xl border'>
@@ -60,6 +66,7 @@ const addMovies = () => {
                     </View>
                 </View>
 
+                {/* Project name */}
                 <View className='m-3'>
                     <Text className='text-black'>Project name:</Text>
                     <View className='mt-2 bg-gray-50 rounded-xl border'>
@@ -72,6 +79,7 @@ const addMovies = () => {
                     </View>
                 </View>
 
+                {/* Project type */}
                 <View className='m-3'>
                     <Text className='text-black'>Project type:</Text>
                     <View className='bg-white rounded-xl mt-2 border'>
@@ -87,6 +95,39 @@ const addMovies = () => {
                     </View>
                 </View>
 
+                {/* Movie start date */}
+                <View className='m-3'>
+                    <Text>Project start date:</Text>
+                    <View className='p-3 mt-2 bg-white border rounded-xl flex-row justify-between items-center'>
+                        <View className='w-1/3 items-start'>
+                            <TouchableOpacity
+                                onPress={openDatePicker}
+                            >
+                                <View className='w-2/3'>
+                                    <Image
+                                        source={dateP}
+                                        className='h-7 w-7'
+                                    />
+                                </View>
+                            </TouchableOpacity>
+                        </View>
+
+                        <View className='w-2/3 items-start'>
+                            <Text className='text-lg'>{form.projectDate}</Text>
+                        </View>
+                    </View>
+                    {
+                        show &&
+                        <DateTimePicker
+                            value={date}
+                            mode='date'
+                            display='default'
+                            onChange={onChange}
+                        />
+                    }
+                </View>
+
+                {/* Designation */}
                 <View className='m-3'>
                     <Text className='text-black'>Designation:</Text>
                     <View className='bg-white rounded-xl mt-2 border'>
@@ -100,7 +141,8 @@ const addMovies = () => {
                         </Picker>
                     </View>
                 </View>
-
+                
+                {/* Production house */}
                 <View className='m-3'>
                     <Text className='text-black'>Production House:</Text>
                     <View className='mt-2 bg-gray-50 rounded-xl border'>
@@ -112,7 +154,8 @@ const addMovies = () => {
                         />
                     </View>
                 </View>
-
+                
+                {/* Director name */}
                 <View className='m-3'>
                     <Text className='text-black'>Director name:</Text>
                     <View className='mt-2 bg-gray-50 rounded-xl border'>
@@ -124,7 +167,8 @@ const addMovies = () => {
                         />
                     </View>
                 </View>
-
+                
+                {/* Salary */}
                 <View className='m-3'>
                     <Text className='text-black'>Salary:</Text>
                     <View className='mt-2 bg-gray-50 rounded-xl border'>
@@ -137,7 +181,8 @@ const addMovies = () => {
                         />
                     </View>
                 </View>
-
+                
+                {/* Add project button */}
                 <View className='my-10 bg-orange-600 mx-3 p-3 rounded-lg'>
                     <TouchableOpacity
                         activeOpacity={0.7}

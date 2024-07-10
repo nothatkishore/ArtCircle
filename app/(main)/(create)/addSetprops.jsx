@@ -83,20 +83,6 @@ const addMovies = () => {
                         </View>
                     </View>
 
-                    <View className='m-3'>
-                        <Text className='text-black'>Project type:</Text>
-                        <View className='bg-white rounded-xl mt-2 border'>
-                            <Picker
-                                selectedValue={form.projectType}
-                                onValueChange={(value, index) => setform({ ...form, projectType: value })}
-                            >
-                                <Picker.Item label="Advertisement" value="Advertisement" />
-                                <Picker.Item label="Cinema" value="Cinema" />
-                                <Picker.Item label="Series" value="Series" />
-                            </Picker>
-                        </View>
-                    </View>
-
 
                     <View className='m-3'>
                         <Text className='text-black'>Upload pictures</Text>

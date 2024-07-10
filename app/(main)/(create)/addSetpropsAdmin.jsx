@@ -11,7 +11,6 @@ const addMovies = () => {
 
     const [form, setform] = useState(
         {
-            artistId: '',
             artistName: '',
             movieName: '',
             setImage: '',
@@ -71,18 +70,6 @@ const addMovies = () => {
                 Upload set pictures
             </Text>
             <ScrollView>
-                <View className='m-3'>
-                    <Text className='text-black'>Member id:</Text>
-                    <View className='mt-2 bg-gray-50 rounded-xl border'>
-                        <TextInput
-                            className='p-3'
-                            placeholder='Member Id'
-                            value={form.artistId}
-                            onChangeText={(value) => setform({ ...form, artistId: value })}
-                            keyboardType='numeric'
-                        />
-                    </View>
-                </View>
 
                 <View className='m-3'>
                     <Text className='text-black'>Member name:</Text>
@@ -111,20 +98,6 @@ const addMovies = () => {
                         </Picker>
                     </View>
                 </View>
-
-                <View className='m-3'>
-                        <Text className='text-black'>Project type:</Text>
-                        <View className='bg-white rounded-xl mt-2 border'>
-                            <Picker
-                                selectedValue={form.projectType}
-                                onValueChange={(value, index) => setform({ ...form, projectType: value })}
-                            >
-                                <Picker.Item label="Advertisement" value="Advertisement" />
-                                <Picker.Item label="Cinema" value="Cinema" />
-                                <Picker.Item label="Series" value="Series" />
-                            </Picker>
-                        </View>
-                    </View>
 
 
                 <View className='h-full w-full'>
@@ -170,7 +143,7 @@ const addMovies = () => {
                         </View>
                     </View>
 
-                    
+
 
 
                     <View className='my-10 bg-orange-600 mx-3 p-3 rounded-xl'>
