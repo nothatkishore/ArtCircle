@@ -1,6 +1,7 @@
 import { View, Text, ScrollView, Image, TouchableOpacity, TextInput } from 'react-native'
 import { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { Picker } from '@react-native-picker/picker';
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import profilePic from '../../assets/icons/user.png'
@@ -8,10 +9,34 @@ import { router } from 'expo-router'
 import instagram from '../../assets/icons/instagram.png'
 import twitter from '../../assets/icons/twitter.png'
 import youtube from '../../assets/icons/youtube.png'
+import facebook from '../../assets/icons/facebook.png'
+import linkedin from '../../assets/icons/linkedin.png'
+import DateTimePicker from '@react-native-community/datetimepicker';
+import dateP from '../../assets/icons/july.png'
 
 
 
 const profile = () => {
+
+    const openDatePicker = () => {
+        setShow(true)
+    }
+
+    const [show, setShow] = useState(false)
+    const [date, setDate] = useState(new Date())
+
+    const onChange = (event, selectedDate) => {
+        const currentDate = selectedDate || date;
+        setShow(false);
+        setDate(currentDate);
+        setform((prev) => {
+            const updatedForm = { ...prev, birthDate: currentDate.toDateString() };
+            console.log(updatedForm.birthDate);
+            return updatedForm;
+        });
+
+        console.log(typeof (form.birthDate))
+    };
 
     const [form, setform] = useState({
         profile: null,
@@ -19,15 +44,19 @@ const profile = () => {
         firstname: 'Stacksnova',
         lastname: 'Stacksnova',
         designation: 'Art director',
-        birthDate: '',
+        birthDate: '12-July-2024',
+        joiningDate: '14-July-2024',
         contact: '9840287145',
+        eContact: '9840287145',
         email: 'samplemailid@gmail.com',
         pAddress: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, nemo ea architecto, nostrum delectus maxime, deleniti qui pariatur sunt optio repudiandae. Accusantium, provident consequatur ipsum voluptas impedit est corporis assumenda.,",
         rAddress: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, nemo ea architecto, nostrum delectus maxime, deleniti qui pariatur sunt optio repudiandae. Accusantium, provident consequatur ipsum voluptas impedit est corporis assumenda.,",
-        bloodGroup: '',
-        YouTubeId: '',
-        InstagramId: '',
-        XId: ''
+        bloodGroup: 'B +ve',
+        YouTubeId: 'sample@youtube',
+        InstagramId: 'sample@instagram',
+        facebookId: 'sample@facebook',
+        linkedinId: 'sample@linkedin',
+        XId: 'sample@X'
     })
 
     const [edit, setedit] = useState(false)
@@ -148,6 +177,76 @@ const profile = () => {
                     </View>
 
                     {/* Date of birth */}
+                    <View className='mb-4'>
+                        <Text>Date of Birth:</Text>
+                        <View className='p-3 mt-2 bg-white border-b flex-row justify-between items-center'>
+                            {
+                                edit &&
+                                <View className='w-1/3 items-start'>
+                                    <TouchableOpacity
+                                        onPress={openDatePicker}
+                                    >
+                                        <View className='w-2/3'>
+                                            <Image
+                                                source={dateP}
+                                                className='h-7 w-7'
+                                            />
+                                        </View>
+                                    </TouchableOpacity>
+                                </View>
+                            }
+
+                            <View className='w-2/3 items-start'>
+                                <Text className='text-base'>{form.birthDate}</Text>
+                            </View>
+                        </View>
+                        {
+                            show &&
+                            <DateTimePicker
+                                value={date}
+                                mode='date'
+                                display='default'
+                                onChange={onChange}
+                            />
+                        }
+                    </View>
+
+                    {/* Date of birth */}
+                    <View className='mb-4'>
+                        <Text>Date of Birth:</Text>
+                        <View className='p-3 mt-2 bg-white border-b flex-row justify-between items-center'>
+                            {
+                                edit &&
+                                <View className='w-1/3 items-start'>
+                                    <TouchableOpacity
+                                        onPress={openDatePicker}
+                                    >
+                                        <View className='w-2/3'>
+                                            <Image
+                                                source={dateP}
+                                                className='h-7 w-7'
+                                            />
+                                        </View>
+                                    </TouchableOpacity>
+                                </View>
+                            }
+
+                            <View className='w-2/3 items-start'>
+                                <Text className='text-base'>{form.birthDate}</Text>
+                            </View>
+                        </View>
+                        {
+                            show &&
+                            <DateTimePicker
+                                value={date}
+                                mode='date'
+                                display='default'
+                                onChange={onChange}
+                            />
+                        }
+                    </View>
+
+
 
                     {/* Contact */}
                     <View className='mb-4'>
@@ -158,6 +257,18 @@ const profile = () => {
                             editable={edit}
                             keyboardType='numeric'
                             onChangeText={(value) => ({ ...form, contact: value })}
+                        />
+                    </View>
+
+                    {/* Emergency Contact */}
+                    <View className='mb-4'>
+                        <Text>Emergency Contact:</Text>
+                        <TextInput
+                            value={form.eContact}
+                            className='text-lg mt-2 border-b border-slate-700'
+                            editable={edit}
+                            keyboardType='numeric'
+                            onChangeText={(value) => ({ ...form, eContact: value })}
                         />
                     </View>
 
@@ -190,6 +301,25 @@ const profile = () => {
                     </View>
 
                     {/* Blood group */}
+                    <View className='mb-4'>
+                        <Text className='text-black'>Blood group:</Text>
+                        <View className='bg-white mt-2 border-b'>
+                            <Picker
+                                selectedValue={form.bloodGroup}
+                                onValueChange={(value, index) => setform({ ...form, bloodGroup: value })}
+                                enabled={edit}
+                            >
+                                <Picker.Item label="A +ve" value="A +ve" />
+                                <Picker.Item label="A -ve" value="A -ve" />
+                                <Picker.Item label="B +ve" value="B +ve" />
+                                <Picker.Item label="B -ve" value="B -ve" />
+                                <Picker.Item label="AB +ve" value="AB +ve" />
+                                <Picker.Item label="AB -ve" value="AB -ve" />
+                                <Picker.Item label="O +ve" value="O +ve" />
+                                <Picker.Item label="O -ve" value="O -ve" />
+                            </Picker>
+                        </View>
+                    </View>
 
                     {/* Instagram id */}
                     <View className='mb-4'>
@@ -242,6 +372,42 @@ const profile = () => {
                             editable={edit}
                             onChangeText={(value) => ({ ...form, YouTubeId: value })}
                             placeholder='YouTube id'
+                        />
+                    </View>
+
+                    {/* Facebook id */}
+                    <View className='mb-4'>
+                        <View className='flex-row items-center gap-2'>
+                            <Image
+                                source={facebook}
+                                className='h-4 w-4'
+                            />
+                            <Text>Facebook:</Text>
+                        </View>
+                        <TextInput
+                            value={form.facebookId}
+                            className=' mt-2 border-b border-slate-700'
+                            editable={edit}
+                            onChangeText={(value) => ({ ...form, facebookId: value })}
+                            placeholder='Facebook id'
+                        />
+                    </View>
+
+                    {/* Linkedin id */}
+                    <View className='mb-4'>
+                        <View className='flex-row items-center gap-2'>
+                            <Image
+                                source={linkedin}
+                                className='h-4 w-4'
+                            />
+                            <Text>Linkedin:</Text>
+                        </View>
+                        <TextInput
+                            value={form.linkedinId}
+                            className=' mt-2 border-b border-slate-700'
+                            editable={edit}
+                            onChangeText={(value) => ({ ...form, linkedinId: value })}
+                            placeholder='Linkedin id'
                         />
                     </View>
 
