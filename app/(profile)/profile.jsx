@@ -13,6 +13,8 @@ import facebook from '../../assets/icons/facebook.png'
 import linkedin from '../../assets/icons/linkedin.png'
 import DateTimePicker from '@react-native-community/datetimepicker';
 import dateP from '../../assets/icons/july.png'
+import * as ImagePicker from 'expo-image-picker'
+
 
 
 
@@ -21,6 +23,9 @@ const profile = () => {
     const openDatePicker = () => {
         setShow(true)
     }
+
+
+
 
     const [show, setShow] = useState(false)
     const [date, setDate] = useState(new Date())
@@ -34,8 +39,6 @@ const profile = () => {
             console.log(updatedForm.birthDate);
             return updatedForm;
         });
-
-        console.log(typeof (form.birthDate))
     };
 
     const [form, setform] = useState({
@@ -59,12 +62,31 @@ const profile = () => {
         XId: 'sample@X'
     })
 
+    const uploadImage = async () => {
+        const permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync()
+        if (permissionResult.granted === false) {
+            Alert.alert('Access denied', 'Permission required to import image from gallery')
+            return
+        }
+
+        const result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+            allowsEditing: true,
+            aspect: [4, 4],
+            quality: 1
+        })
+
+        if (!result.canceled) {
+            setform({ ...form, profile: result.assets[0].uri })
+        }
+    }
+
     const [edit, setedit] = useState(false)
 
     return (
         <SafeAreaView className='flex-1 bg-slate-100'>
-            <View className='bg-white p-3 mb-7 rounded-lg shadow-2xl'>
-                <Text className='text-lg text-center text-gray-700'>Member profile</Text>
+            <View className='bg-[#ffa629] p-3 mb-7 rounded-b-lg shadow-2xl'>
+                <Text className='text-lg text-center text-white'>Member profile</Text>
                 {
                     edit &&
                     <TouchableOpacity
@@ -87,8 +109,9 @@ const profile = () => {
                     {/* Profile picture */}
                     <View className='w-auto p-2 justify-center items-center'>
                         <Image
-                            source={profilePic}
-                            className='h-24 w-24'
+                            source={form.profile ? {uri : form.profile} : profilePic}
+                            className='h-24 w-24 rounded-full'
+                            resizeMode='contain'
                         />
                         <Text className='text-lg'>{form.firstname}</Text>
                         <Text className='text-sm'>{form.designation}</Text>
@@ -97,6 +120,7 @@ const profile = () => {
                             <>
                                 <TouchableOpacity
                                     activeOpacity={0.7}
+                                    onPress={uploadImage}
                                 >
                                     <View className='bg-slate-200 p-2 rounded-lg mt-2'>
                                         <Text className='text-slate-700'>Change photo</Text>
@@ -211,39 +235,14 @@ const profile = () => {
                         }
                     </View>
 
-                    {/* Date of birth */}
+                    {/* Date of Joining */}
                     <View className='mb-4'>
-                        <Text>Date of Birth:</Text>
+                        <Text>Date of Joining:</Text>
                         <View className='p-3 mt-2 bg-white border-b flex-row justify-between items-center'>
-                            {
-                                edit &&
-                                <View className='w-1/3 items-start'>
-                                    <TouchableOpacity
-                                        onPress={openDatePicker}
-                                    >
-                                        <View className='w-2/3'>
-                                            <Image
-                                                source={dateP}
-                                                className='h-7 w-7'
-                                            />
-                                        </View>
-                                    </TouchableOpacity>
-                                </View>
-                            }
-
                             <View className='w-2/3 items-start'>
-                                <Text className='text-base'>{form.birthDate}</Text>
+                                <Text className='text-base'>{form.joiningDate}</Text>
                             </View>
                         </View>
-                        {
-                            show &&
-                            <DateTimePicker
-                                value={date}
-                                mode='date'
-                                display='default'
-                                onChange={onChange}
-                            />
-                        }
                     </View>
 
 
