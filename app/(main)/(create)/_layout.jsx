@@ -10,6 +10,7 @@ const CreateLayout = () =>
       <Stack.Screen name="addMoviesAdmin" options={{headerShown : false}} />
       <Stack.Screen name="addSetprops" options={{headerShown : false}} />
       <Stack.Screen name="addSetpropsAdmin" options={{headerShown : false}} />
+      <Stack.Screen name="addLocationAdmin" options={{headerShown : false}} />
     </Stack>
   )
 }

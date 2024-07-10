@@ -11,7 +11,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 //  Form validation
 //  API requests
 
-const addMovies = () => {
+const addMoviesAdmin = () => {
 
     const [form, setform] = useState(
         {
@@ -87,7 +87,7 @@ const addMovies = () => {
                             selectedValue={form.projecType}
                             onValueChange={(value, index) => setform({ ...form, projecType: value })}
                         >
-                            <Picker.Item label="Advertisement" value="Advertisement" />
+                            <Picker.Item label="Advertisement" value="Advertisement"/>
                             <Picker.Item label="Cinema" value="Cinema" />
                             <Picker.Item label="Series" value="Series" />
                             <Picker.Item label="Others" value="Others" />
@@ -201,4 +201,4 @@ const addMovies = () => {
 }
 
 
-export default addMovies
+export default addMoviesAdmin

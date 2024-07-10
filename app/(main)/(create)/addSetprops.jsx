@@ -7,7 +7,7 @@ import profile from '../../../assets/icons/photo.png'
 import * as ImagePicker from 'expo-image-picker'
 
 
-const addMovies = () => {
+const addSetprops = () => {
 
     const [form, setform] = useState(
         {
@@ -76,7 +76,7 @@ const addMovies = () => {
                             >
                                 {
                                     projectsActive.map((value) => (
-                                        <Picker.Item key={value.id} label={value.projectName} value={value.projectName} />
+                                        <Picker.Item key={value.projectId} label={value.projectName} value={value.projectName} />
                                     ))
                                 }
                             </Picker>
@@ -145,4 +145,4 @@ const addMovies = () => {
 }
 
 
-export default addMovies
+export default addSetprops
