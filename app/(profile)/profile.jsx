@@ -1,45 +1,58 @@
-import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, Image, TouchableOpacity, TextInput } from 'react-native'
 import { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import profilePic from '../../assets/icons/user.png'
 import { router } from 'expo-router'
+import instagram from '../../assets/icons/instagram.png'
+import twitter from '../../assets/icons/twitter.png'
+import youtube from '../../assets/icons/youtube.png'
+
+
 
 const profile = () => {
 
     const [form, setform] = useState({
         profile: null,
-        username: 'Stacksnova',
+        memberId: '123456',
+        firstname: 'Stacksnova',
+        lastname: 'Stacksnova',
         designation: 'Art director',
-        contact: '',
-        econtact: '',
-        email: '',
-        pAddress: '',
-        rAddress: ''
+        birthDate: '',
+        contact: '9840287145',
+        email: 'samplemailid@gmail.com',
+        pAddress: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, nemo ea architecto, nostrum delectus maxime, deleniti qui pariatur sunt optio repudiandae. Accusantium, provident consequatur ipsum voluptas impedit est corporis assumenda.,",
+        rAddress: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, nemo ea architecto, nostrum delectus maxime, deleniti qui pariatur sunt optio repudiandae. Accusantium, provident consequatur ipsum voluptas impedit est corporis assumenda.,",
+        bloodGroup: '',
+        YouTubeId: '',
+        InstagramId: '',
+        XId: ''
     })
 
     const [edit, setedit] = useState(false)
 
     return (
         <SafeAreaView className='flex-1 bg-slate-100'>
-            <ScrollView className='px-5 py-7'>
+            <View className='bg-white p-3 mb-7 rounded-lg shadow-2xl'>
+                <Text className='text-lg text-center text-gray-700'>Member profile</Text>
+                {
+                    edit &&
+                    <TouchableOpacity
+                        activeOpacity={0.7}
+                        onPress={() => setedit(false)}
+                    >
+                        <View className='bg-green-500 p-2 rounded-lg mt-2'>
+                            <Text className='text-white text-center'>Save changes</Text>
+                        </View>
+                    </TouchableOpacity>
+                }
+            </View>
+            <ScrollView className='px-5 py-7 h-full w-full'>
 
-                <View className='bg-white p-3 mb-7 rounded-lg shadow-2xl'>
-                    <Text className='text-lg text-center text-gray-700'>Member profile</Text>
-                    {
-                        edit &&
-                        <TouchableOpacity
-                            activeOpacity={0.7}
-                            onPress={() => setedit(false)}
-                        >
-                            <View className='bg-green-500 p-2 rounded-lg mt-2'>
-                                <Text className='text-white text-center'>Save changes</Text>
-                            </View>
-                        </TouchableOpacity>
-                    }
-                </View>
 
+
+                {/* Profle card */}
                 <View className='bg-white p-7 flex-row justify-around rounded-lg'>
 
                     {/* Profile picture */}
@@ -48,7 +61,7 @@ const profile = () => {
                             source={profilePic}
                             className='h-24 w-24'
                         />
-                        <Text className='text-lg'>{form.username}</Text>
+                        <Text className='text-lg'>{form.firstname}</Text>
                         <Text className='text-sm'>{form.designation}</Text>
                         {
                             edit &&
@@ -60,8 +73,6 @@ const profile = () => {
                                         <Text className='text-slate-700'>Change photo</Text>
                                     </View>
                                 </TouchableOpacity>
-
-
                             </>
                         }
                     </View>
@@ -97,9 +108,148 @@ const profile = () => {
                             </TouchableOpacity>
                         </View>
                     }
+                </View>
+
+                {/* Details page */}
+
+                <View className='bg-white p-7 my-7 rounded-xl'>
+
+                    {/* Member Id */}
+                    <View className='mb-4'>
+                        <Text>Member Id:</Text>
+                        <TextInput
+                            value={form.memberId}
+                            className='text-lg mt-2 border-b border-slate-700'
+                            editable={edit}
+                            onChangeText={(value) => ({ ...form, memberId: value })}
+                        />
+                    </View>
+
+                    {/* First name */}
+                    <View className='mb-4'>
+                        <Text>First name:</Text>
+                        <TextInput
+                            value={form.firstname}
+                            className='text-lg mt-2 border-b border-slate-700'
+                            editable={edit}
+                            onChangeText={(value) => ({ ...form, firstname: value })}
+                        />
+                    </View>
+
+                    {/* Last name */}
+                    <View className='mb-4'>
+                        <Text>Last name:</Text>
+                        <TextInput
+                            value={form.lastname}
+                            className='text-lg mt-2 border-b border-slate-700'
+                            editable={edit}
+                            onChangeText={(value) => ({ ...form, lastname: value })}
+                        />
+                    </View>
+
+                    {/* Date of birth */}
+
+                    {/* Contact */}
+                    <View className='mb-4'>
+                        <Text>Contact:</Text>
+                        <TextInput
+                            value={form.contact}
+                            className='text-lg mt-2 border-b border-slate-700'
+                            editable={edit}
+                            keyboardType='numeric'
+                            onChangeText={(value) => ({ ...form, contact: value })}
+                        />
+                    </View>
+
+                    {/* pAddress */}
+                    <View className='mb-4'>
+                        <Text>Permanent Address:</Text>
+                        <TextInput
+                            value={form.pAddress}
+                            className='text mt-2 border border-slate-700 rounded-lg p-2'
+                            editable={edit}
+                            numberOfLines={5}
+                            style={{ textAlignVertical: 'top' }}
+                            onChangeText={(value) => ({ ...form, pAddress: value })}
+                            multiline={true}
+                        />
+                    </View>
+
+                    {/* rAddress */}
+                    <View className='mb-4'>
+                        <Text>Resident Address:</Text>
+                        <TextInput
+                            value={form.rAddress}
+                            className='text mt-2 border border-slate-700 rounded-lg p-2'
+                            editable={edit}
+                            numberOfLines={5}
+                            style={{ textAlignVertical: 'top' }}
+                            onChangeText={(value) => ({ ...form, rAddress: value })}
+                            multiline={true}
+                        />
+                    </View>
+
+                    {/* Blood group */}
+
+                    {/* Instagram id */}
+                    <View className='mb-4'>
+                        <View className='flex-row items-center gap-2'>
+                            <Image
+                                source={instagram}
+                                className='h-4 w-4'
+                            />
+                            <Text>Instagram:</Text>
+                        </View>
+                        <TextInput
+                            value={form.InstagramId}
+                            className='text mt-2 border-b border-slate-700'
+                            editable={edit}
+                            onChangeText={(value) => ({ ...form, InstagramId: value })}
+                            placeholder='Instagram Id'
+                        />
+                    </View>
+
+                    {/* Xid */}
+                    <View className='mb-4'>
+                        <View className='flex-row items-center gap-2'>
+                            <Image
+                                source={twitter}
+                                className='h-4 w-4'
+                            />
+                            <Text>X:</Text>
+                        </View>
+                        <TextInput
+                            value={form.XId}
+                            className=' mt-2 border-b border-slate-700'
+                            editable={edit}
+                            placeholder='X Id'
+                            onChangeText={(value) => ({ ...form, XId: value })}
+                        />
+                    </View>
+
+                    {/* YouTube id */}
+                    <View className='mb-4'>
+                        <View className='flex-row items-center gap-2'>
+                            <Image
+                                source={youtube}
+                                className='h-4 w-4'
+                            />
+                            <Text>YouTube:</Text>
+                        </View>
+                        <TextInput
+                            value={form.YouTubeId}
+                            className=' mt-2 border-b border-slate-700'
+                            editable={edit}
+                            onChangeText={(value) => ({ ...form, YouTubeId: value })}
+                            placeholder='YouTube id'
+                        />
+                    </View>
 
                 </View>
 
+                <View>
+                    <Text>End of page</Text>
+                </View>
 
             </ScrollView>
             <StatusBar style='light' backgroundColor='#ffa629' />
