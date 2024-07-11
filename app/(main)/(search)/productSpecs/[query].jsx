@@ -15,6 +15,9 @@ const ProductDetails = () => {
     const { query } = useLocalSearchParams()
     //use this query keyword to make a API request
 
+    // Product details
+    const productData = { fullAddress : '', Contact : '', Price : '', Description : '', locationLink : '' }
+
     const data = [
         { id: 1, image: picture1, location: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
         { id: 2, image: picture2 },
@@ -79,6 +82,15 @@ const ProductDetails = () => {
                                 </Text>
                                 <Text className='text-[15px] font-medium'>Contact :
                                     <Text className='font-normal text-[14px]'> +91 123456789, 044 123456789, +91 980392352123 </Text>
+                                </Text>
+                                <Text className='text-[15px] font-medium'>E Mail :
+                                    <Text className='font-normal text-[14px]'> sampleaddress@gmail.com </Text>
+                                </Text>
+                                <Text className='text-[15px] font-medium'>Price / Rent :
+                                    <Text className='font-normal text-[14px]'> Rs. 2,500 /- per hour maximum use of 3 days. Late issues will be fined. </Text>
+                                </Text>
+                                <Text className='text-[15px] font-medium'>Website link :
+                                    <Text className='font-normal text-[14px]'> link@storename </Text>
                                 </Text>
                                 <Text className='text-[15px] font-medium'>Description :
                                     <Text className='font-normal'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deleniti amet magnam earum ipsam atque commodi, totam sint quibusdam fugiat. Dolores, ipsa quam? Accusantium aliquid voluptates sunt officia? Atque, aut. </Text>

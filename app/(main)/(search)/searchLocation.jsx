@@ -23,19 +23,19 @@ const searchLocation = () => {
       locationLink : 'Maps Link'
     }
   */
- 
-  const data = 
-  [
-    { spotName : 'Palace', locationName : 'Pallavaram, Chennai, TN', SpotImage : picture1, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
-    { spotName : 'Beach', locationName : 'Marina, Chennai, TN', SpotImage : picture2, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
-    { spotName : 'Palace', locationName : 'Mysore, Karnataka', SpotImage : picture3, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
-    { spotName : 'Banglow', locationName : 'Guindy, Chennai, TN', SpotImage : picture2, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
-    { spotName : 'Haunted site', locationName : 'Demote colony, Chennai, TN', SpotImage : picture1, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
-    { spotName : 'Forest area', locationName : 'Nandavanam, Chennai, TN', SpotImage : picture2, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
-    { spotName : 'Water falls', locationName : 'Pallakad, Kerala', SpotImage : picture4, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
-    { spotName : 'Beach', locationName : 'Kochi, Kerala', SpotImage : picture1, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
-    { spotName : 'Forest area', locationName : 'Anna nagar, Chennai, TN', SpotImage : picture5, locationLink : 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' }
-  ]
+
+  const data =
+    [
+      { spotName: 'Palace', locationName: 'Pallavaram, Chennai, TN', SpotImage: picture1, locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+      { spotName: 'Beach', locationName: 'Marina, Chennai, TN', SpotImage: picture2, locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+      { spotName: 'Palace', locationName: 'Mysore, Karnataka', SpotImage: picture3, locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+      { spotName: 'Banglow', locationName: 'Guindy, Chennai, TN', SpotImage: picture2, locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+      { spotName: 'Haunted site', locationName: 'Demote colony, Chennai, TN', SpotImage: picture1, locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+      { spotName: 'Forest area', locationName: 'Nandavanam, Chennai, TN', SpotImage: picture2, locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+      { spotName: 'Water falls', locationName: 'Pallakad, Kerala', SpotImage: picture4, locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+      { spotName: 'Beach', locationName: 'Kochi, Kerala', SpotImage: picture1, locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+      { spotName: 'Forest area', locationName: 'Anna nagar, Chennai, TN', SpotImage: picture5, locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' }
+    ]
 
   const renderItems = ({ item }) => (
     <Cards
@@ -52,8 +52,7 @@ const searchLocation = () => {
   const [search, setsearch] = useState('')
   const [filterData, setFilteredData] = useState(data)
 
-  const handleSearch = (text) =>
-  {
+  const handleSearch = (text) => {
     setsearch(text)
     const NewData = data.filter(item => item.spotName.toLowerCase().includes(text.toLowerCase()))
     setFilteredData(NewData)
@@ -63,7 +62,7 @@ const searchLocation = () => {
     <SafeAreaView className='bg-[#f0f3f6] h-full w-full'>
       <Header />
       <View className='bg-gray-50 shadow-lg m-5 p-2 rounded-lg flex-row items-center'>
-        <TextInput 
+        <TextInput
           value={search}
           placeholder='Enter search location'
           className='text-base w-11/12'
@@ -73,7 +72,7 @@ const searchLocation = () => {
         <TouchableOpacity
           activeOpacity={0.8}
         >
-          <Image 
+          <Image
             source={searchButton}
             className='h-6 w-6'
             resizeMode='contain'

@@ -25,6 +25,7 @@ const addMember = () => {
       gender: '',
       position: '',
       phone: '',
+      econtact : '',
       email: '',
       bloodGroup: '',
       pAddress: '',
@@ -71,9 +72,6 @@ const addMember = () => {
     console.log(typeof (form.DOB))
   };
 
-  // useEffect(() => {
-  //   console.log(form.DOB);
-  // }, [form.DOB]);
 
   const openDatePicker = () => {
     setShow(true)
@@ -213,6 +211,19 @@ const addMember = () => {
               keyboardType='numeric'
               value={form.phone}
               onChangeText={(value) => setform({ ...form, phone: value })}
+            />
+          </View>
+        </View>
+
+        <View className='m-3'>
+          <Text className='text-black'>Emergency Contact:</Text>
+          <View className='mt-2 bg-gray-50 rounded-xl border'>
+            <TextInput
+              className='p-3'
+              placeholder='Emergency contact'
+              keyboardType='numeric'
+              value={form.econtact}
+              onChangeText={(value) => setform({ ...form, econtact: value })}
             />
           </View>
         </View>

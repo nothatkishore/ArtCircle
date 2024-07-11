@@ -39,7 +39,7 @@ const searchProducts = () => {
 
   const handleSearch = (text) => {
     setSearch(text)
-    const NewData = data.filter(item => item.name.toLowerCase().includes(text.toLowerCase()))
+    const NewData = data.filter(item => item.productName.toLowerCase().includes(text.toLowerCase()))
     setFilteredData(NewData)
   }
 
