@@ -75,21 +75,6 @@ const more = () => {
 
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={() => router.push('/write')}
-        >
-          <View className="w-ful  mt-1 flex-row justify-center items-center px-10 rounded-lg mx-2 shadow-lg shadow-orange-400 bg-white">
-            <Image
-              source={publishPost}
-              className="w-7 h-7"
-              resizeMode="contain"
-            />
-            <Text className="w-full pt-5 pb-5 px-5 text-base">
-              Publish Post</Text>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          activeOpacity={0.8}
           onPress={() => router.push('/searchLocation')}
         >
           <View className="w-ful  mt-1 flex-row justify-center items-center px-10 rounded-lg mx-2 shadow-lg shadow-orange-400 bg-white">
@@ -105,7 +90,7 @@ const more = () => {
 
         <TouchableOpacity
           activeOpacity={0.8}
-          onPress={() => router.push('/searchStores')}
+          onPress={() => router.push('/searchProduct')}
         >
           <View className="w-ful  mt-1 flex-row justify-center items-center px-10 rounded-lg mx-2 shadow-lg shadow-orange-400 bg-white">
             <Image

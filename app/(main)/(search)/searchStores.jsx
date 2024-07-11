@@ -2,19 +2,12 @@ import { View, Text, FlatList, TextInput, TouchableOpacity, Image } from 'react-
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Header from '../../../components/Header'
-import Cards from '../../../components/Cards'
 import searchButton from '../../../assets/icons/find-store.png'
-import picture1 from '../../../placeholder/Products/AK117.jpeg'
-import picture2 from '../../../placeholder/Products/bike_engine.jpg'
-import picture4 from '../../../placeholder/Products/sniper.jpeg'
-import picture5 from '../../../placeholder/Products/M4A1.jpeg'
 import { router, Link } from 'expo-router'
 
-
-// ''
-
 const searchStores = () => {
-  const data = [
+  const data = 
+  [
     { id: 1, storeName: 'Blick Art Materials', fullAddress: '87/2,SambuPrasad Avenue,Arcot Road, Vadapalani, Chennai, Tamil Nadu 600026', contact: '123456789', locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
     { id: 2, storeName: 'Michaels', fullAddress: '87/2,SambuPrasad Avenue,Arcot Road, Vadapalani, Chennai, Tamil Nadu 600026', contact: '123456789', locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
     { id: 3, storeName: 'Hobby Lobby', fullAddress: '87/2,SambuPrasad Avenue,Arcot Road, Vadapalani, Chennai, Tamil Nadu 600026', contact: '123456789', locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
@@ -39,7 +32,7 @@ const searchStores = () => {
           <Text>{item.fullAddress}</Text>
         </View>
       </TouchableOpacity>
-      <View className='justify-center items-center'>
+      <View className=' items-center w-full'>
         <Link
           href={data[0].locationLink}
           className='mt-2'
