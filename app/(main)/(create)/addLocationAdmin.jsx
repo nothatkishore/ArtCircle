@@ -14,7 +14,6 @@ const addLocationAdmin = () => {
   const [form, setform] = useState(
     {
       placeName: '',
-      area: '',
       setImage: [],
       city: '',
       state: '',
@@ -122,16 +121,18 @@ const addLocationAdmin = () => {
           </View>
         </View>
 
-
-        {/* Area of the location */}
+        {/* Full address */}
         <View className='m-3'>
-          <Text className='text-black'>Area:</Text>
+          <Text className='text-black'>Full address:</Text>
           <View className='mt-2 bg-gray-50 rounded-xl border'>
             <TextInput
               className='p-3'
-              placeholder='Area of the location'
-              value={form.area}
-              onChangeText={(value) => setform({ ...form, area: value })}
+              placeholder='Full address'
+              style={{ textAlignVertical: 'top' }}
+              numberOfLines={5}
+              multiline={true}
+              value={form.fullAddress}
+              onChangeText={(value) => setform({ ...form, fullAddress: value })}
             />
           </View>
         </View>
@@ -149,21 +150,7 @@ const addLocationAdmin = () => {
           </View>
         </View>
 
-        {/* Full address */}
-        <View className='m-3'>
-          <Text className='text-black'>Full address:</Text>
-          <View className='mt-2 bg-gray-50 rounded-xl border'>
-            <TextInput
-              className='p-3'
-              placeholder='Full address'
-              style={{ textAlignVertical: 'top' }}
-              numberOfLines={5}
-              multiline={true}
-              value={form.fullAddress}
-              onChangeText={(value) => setform({ ...form, fullAddress: value })}
-            />
-          </View>
-        </View>
+
 
         {/* Contact */}
         <View className='m-3'>
