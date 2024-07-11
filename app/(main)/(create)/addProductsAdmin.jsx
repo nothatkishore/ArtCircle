@@ -13,11 +13,13 @@ const addProductsAdmin = () => {
 
   const [form, setform] = useState(
     {
-      productName : '',
-      productShop : '',
-      productDescription : '',
-      productCover : null,
-      productImages : []
+      productName: '',
+      productShop: '',
+      productDescription: '',
+      productPriceRent: '',
+      productStock: '',
+      productCover: null,
+      productImages: []
     })
 
   /*
@@ -34,12 +36,12 @@ const addProductsAdmin = () => {
   }
 
   const stores = [
-    { id : 1, name : 'ratnam stores' },
-    { id : 2, name : 'sample store name 1' },
-    { id : 3, name : 'sample store name 2' },
-    { id : 4, name : 'sample store name 3' },
-    { id : 5, name : 'sample store name 4' },
-    { id : 6, name : 'sample store name 5' },
+    { id: 1, name: 'ratnam stores' },
+    { id: 2, name: 'sample store name 1' },
+    { id: 3, name: 'sample store name 2' },
+    { id: 4, name: 'sample store name 3' },
+    { id: 5, name: 'sample store name 4' },
+    { id: 6, name: 'sample store name 5' },
   ]
 
   const handlePress = async () => {
@@ -74,19 +76,8 @@ const addProductsAdmin = () => {
         Add New Product
       </Text>
       <ScrollView>
-        {/* Product name */}
-        <View className='m-3'>
-          <Text className='text-black'>Product name:</Text>
-          <View className='mt-2 bg-gray-50 rounded-xl border'>
-            <TextInput
-              className='p-3'
-              placeholder='Product name'
-              value={form.productName}
-              onChangeText={(value) => setform({ ...form, productName: value })}
-            />
-          </View>
-        </View>
 
+        {/* Shop name */}
         <View className='m-3'>
           <Text className='text-black'>Product shop:</Text>
           <View className='bg-white rounded-xl mt-2 border'>
@@ -103,6 +94,19 @@ const addProductsAdmin = () => {
           </View>
         </View>
 
+        {/* Product name */}
+        <View className='m-3'>
+          <Text className='text-black'>Product name:</Text>
+          <View className='mt-2 bg-gray-50 rounded-xl border'>
+            <TextInput
+              className='p-3'
+              placeholder='Product name'
+              value={form.productName}
+              onChangeText={(value) => setform({ ...form, productName: value })}
+            />
+          </View>
+        </View>
+
         {/* Description */}
         <View className='m-3'>
           <Text className='text-black'>Description:</Text>
@@ -115,6 +119,36 @@ const addProductsAdmin = () => {
               style={{ textAlignVertical: 'top' }}
               value={form.productDescription}
               onChangeText={(value) => setform({ ...form, productDescription: value })}
+            />
+          </View>
+        </View>
+
+        {/* Price / Rent */}
+        <View className='m-3'>
+          <Text className='text-black'>Price / Rent:</Text>
+          <View className='mt-2 bg-gray-50 rounded-xl border'>
+            <TextInput
+              className='p-3'
+              placeholder='Enter price or rent details'
+              numberOfLines={5}
+              multiline={true}
+              style={{ textAlignVertical: 'top' }}
+              value={form.productPriceRent}
+              onChangeText={(value) => setform({ ...form, productPriceRent: value })}
+            />
+          </View>
+        </View>
+
+        {/* Stock availablity */}
+        <View className='m-3'>
+          <Text className='text-black'>Stocks Available:</Text>
+          <View className='mt-2 bg-gray-50 rounded-xl border'>
+            <TextInput
+              className='p-3'
+              placeholder='Enter stock availability'
+              keyboardType='numeric'
+              value={form.productStock}
+              onChangeText={(value) => setform({ ...form, productStock: value })}
             />
           </View>
         </View>

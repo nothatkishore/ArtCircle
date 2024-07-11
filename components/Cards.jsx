@@ -18,7 +18,7 @@ const Cards = ({ image, BigText, SmallText, xSmallText, PATH, flag, ExPATH }) =>
                         <Text className='text-base font-light text-black'>{SmallText || 'Location'}</Text>
                         <Link
                             href={ExPATH || ''}
-                            className='mt-1 text-gray-500 font-semibold text-[13px]'
+                            className='mt-4 text-gray-200 font-semibold text-[12px] bg-slate-700 p-2 rounded-lg w-4/5 text-center'
                         >
                             {xSmallText || ''}
                         </Link>
