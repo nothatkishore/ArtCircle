@@ -92,6 +92,9 @@ const ProductDetails = () => {
                                 <Text className='text-[15px] font-medium'>Website link :
                                     <Text className='font-normal text-[14px]'> link@storename </Text>
                                 </Text>
+                                <Text className='text-[15px] font-medium'>Stocks available :
+                                    <Text className='font-normal text-[14px]'> 4  </Text>
+                                </Text>
                                 <Text className='text-[15px] font-medium'>Description :
                                     <Text className='font-normal'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Est deleniti amet magnam earum ipsam atque commodi, totam sint quibusdam fugiat. Dolores, ipsa quam? Accusantium aliquid voluptates sunt officia? Atque, aut. </Text>
                                 </Text>
