@@ -10,7 +10,7 @@ const app = () => {
   const [test, settest] = useState(true)
 
   if (test) {
-    return <Redirect href='/addLocationAdmin' />;
+    return <Redirect href='/create' />;
   }
 
   const fadeAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0

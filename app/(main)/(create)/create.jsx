@@ -1,5 +1,5 @@
 import { View, Text, ScrollView } from 'react-native'
-import {useState} from 'react'
+import { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { router } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
@@ -10,6 +10,7 @@ import movie from '../../../assets/icons/movie.png'
 import setP from '../../../assets/icons/setP.png'
 import addLocation from '../../../assets/icons/pin.png'
 import addStore from '../../../assets/icons/store.png'
+import addProduct from '../../../assets/icons/add-to-basket.png'
 
 
 
@@ -30,7 +31,7 @@ const create = () => {
             />
 
             <ClickOption
-              name='Post Pictures'
+              name='Add Pictures'
               icon={setP}
               handlePress={() => router.push('/addSetprops')}
             />
@@ -51,7 +52,7 @@ const create = () => {
                 />
 
                 <ClickOption
-                  name='Post Pictures (Admin)'
+                  name='Add Pictures (Admin)'
                   icon={setP}
                   handlePress={() => router.push('/addSetpropsAdmin')}
                 />
@@ -65,12 +66,18 @@ const create = () => {
                 <ClickOption
                   name='Add Store (Admin)'
                   icon={addStore}
-                  handlePress={() => router.push('/addLocationAdmin')}
+                  handlePress={() => router.push('/addStoreAdmin')}
                 />
+
+                <ClickOption
+                  name='Add Products (Admin)'
+                  icon={addProduct}
+                  handlePress={() => router.push('/addProductsAdmin')}
+                />
+
               </>
 
             }
-
 
           </View>
         </ScrollView>
