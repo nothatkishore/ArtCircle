@@ -104,8 +104,8 @@ const ProductDetails = () => {
                                 <Link
                                     href={data[0].location || ''}
                                 >
-                                    <View className='bg-slate-200 items-center justify-center p-3 mt-4 rounded-xl'>
-                                        <Text className='text-gray-500 text-[14px]'>
+                                    <View className='bg-slate-700 items-center justify-center p-3 mt-4 rounded-xl'>
+                                        <Text className='text-gray-100 text-[12px]'>
                                             View on maps 🧭
                                         </Text>
                                     </View>

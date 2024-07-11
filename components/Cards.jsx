@@ -16,12 +16,15 @@ const Cards = ({ image, BigText, SmallText, xSmallText, PATH, flag, ExPATH }) =>
                     <View className={`${flag ? 'w-1/2' : 'w-full p-2'}`}>
                         <Text className='text-xl text-black font-semibold'>{BigText || 'Chennai'}</Text>
                         <Text className='text-base font-light text-black'>{SmallText || 'Location'}</Text>
-                        <Link
-                            href={ExPATH || ''}
-                            className='mt-4 text-gray-200 font-semibold text-[12px] bg-slate-700 p-2 rounded-lg w-4/5 text-center'
-                        >
-                            {xSmallText || ''}
-                        </Link>
+                        {xSmallText &&
+                            <Link
+                                href={ExPATH || ''}
+                                className='mt-4 text-gray-200 font-semibold text-[12px] bg-slate-700 p-2 rounded-lg w-4/5 text-center'
+                            >
+                                {xSmallText || ''}
+                            </Link>
+
+                        }
                     </View>
 
                     {

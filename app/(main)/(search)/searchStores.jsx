@@ -8,30 +8,48 @@ import picture1 from '../../../placeholder/Products/AK117.jpeg'
 import picture2 from '../../../placeholder/Products/bike_engine.jpg'
 import picture4 from '../../../placeholder/Products/sniper.jpeg'
 import picture5 from '../../../placeholder/Products/M4A1.jpeg'
+import { router, Link } from 'expo-router'
 
 
+// ''
 
-const searchProducts = () => {
+const searchStores = () => {
   const data = [
-    { productName: 'AK117', shopName: 'Gun Shops', shopLocation: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu', productImage: picture1 },
-    { productName: 'M4A1', shopName: 'Besert Shop', shopLocation: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu', productImage: picture2 },
-    { productName: 'Dummy Knife', shopName: 'XYZ Shops', shopLocation: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu', productImage: picture5 },
-    { productName: 'Bike engine', shopName: 'locertk Shops', shopLocation: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu', productImage: picture4 },
-    { productName: 'Magic Stick', shopName: 'Mckid Shops', shopLocation: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu', productImage: picture5 },
-    { productName: 'Dummy Pistol', shopName: 'random12 Shops', shopLocation: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu', productImage: picture1 },
-    { productName: 'Dummy sniper', shopName: 'vercel Shops', shopLocation: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu', productImage: picture2 }
+    { id: 1, storeName: 'Blick Art Materials', fullAddress: '87/2,SambuPrasad Avenue,Arcot Road, Vadapalani, Chennai, Tamil Nadu 600026', contact: '123456789', locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+    { id: 2, storeName: 'Michaels', fullAddress: '87/2,SambuPrasad Avenue,Arcot Road, Vadapalani, Chennai, Tamil Nadu 600026', contact: '123456789', locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+    { id: 3, storeName: 'Hobby Lobby', fullAddress: '87/2,SambuPrasad Avenue,Arcot Road, Vadapalani, Chennai, Tamil Nadu 600026', contact: '123456789', locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+    { id: 4, storeName: 'Dick Blick', fullAddress: '87/2,SambuPrasad Avenue,Arcot Road, Vadapalani, Chennai, Tamil Nadu 600026', contact: '123456789', locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+    { id: 5, storeName: 'Pearl Paint', fullAddress: '87/2,SambuPrasad Avenue,Arcot Road, Vadapalani, Chennai, Tamil Nadu 600026', contact: '123456789', locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+    { id: 6, storeName: 'Art Supply Warehouse', fullAddress: '87/2,SambuPrasad Avenue,Arcot Road, Vadapalani, Chennai, Tamil Nadu 600026', contact: '123456789', locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+    { id: 7, storeName: 'Plaza Art', fullAddress: '87/2,SambuPrasad Avenue,Arcot Road, Vadapalani, Chennai, Tamil Nadu 600026', contact: '123456789', locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' },
+    { id: 8, storeName: 'Da Vinci Art Supply', fullAddress: '87/2,SambuPrasad Avenue,Arcot Road, Vadapalani, Chennai, Tamil Nadu 600026', contact: '123456789', locationLink: 'https://www.google.com/maps/search/google+maps+link/@13.0612987,80.2258942,12z/data=!3m1!4b1?entry=ttu' }
   ]
 
   const renderItems = ({ item }) => (
-    <Cards
-      BigText={item.productName}
-      SmallText={item.shopName}
-      xSmallText='🧭 View on Maps'
-      ExPATH={item.shopLocation}
-      PATH={`productSpecs/${item.productName}`}
-      flag={true}
-      image={item.productImage}
-    />
+    <View className='m-2 bg-white p-4 rounded-xl'>
+      <TouchableOpacity
+        activeOpacity={0.8}
+        onPress={() => router.push(`/shopDetails/${item.storeName}`)}
+      >
+        <View className='my-2'>
+          <Text className='text-lg'>{item.storeName}</Text>
+        </View>
+        <View className='my-2 space-y-1'>
+          <Text className='font-medium'>Address:</Text>
+          <Text>{item.fullAddress}</Text>
+        </View>
+      </TouchableOpacity>
+      <View className='justify-center items-center'>
+        <Link
+          href={data[0].locationLink}
+          className='mt-2'
+        >
+          <View className='my-2 bg-slate-700 w-full p-3 rounded-xl justify-center items-center'>
+            <Text className='text-white text-center'>🧭 View on Maps</Text>
+          </View>
+        </Link>
+      </View>
+    </View>
   )
 
   const [search, setSearch] = useState('')
@@ -39,7 +57,7 @@ const searchProducts = () => {
 
   const handleSearch = (text) => {
     setSearch(text)
-    const NewData = data.filter(item => item.productName.toLowerCase().includes(text.toLowerCase()))
+    const NewData = data.filter(item => item.storeName.toLowerCase().includes(text.toLowerCase()))
     setFilteredData(NewData)
   }
 
@@ -50,7 +68,7 @@ const searchProducts = () => {
       <View className='bg-gray-50 shadow-lg m-5 p-2 rounded-lg flex-row items-center'>
         <TextInput
           value={search}
-          placeholder='Enter search location'
+          placeholder='Search Stores'
           className='text-base w-11/12'
           onChangeText={(text) => handleSearch(text)}
         />
@@ -66,6 +84,15 @@ const searchProducts = () => {
         </TouchableOpacity>
       </View>
 
+      <TouchableOpacity
+        activeOpacity={0.8}
+        onPress={() => router.push('/searchProduct')}
+      >
+        <View className='mx-5 mb-3 bg-slate-700 p-2 rounded-xl'>
+          <Text className='text-white text-center'>Search by Product</Text>
+        </View>
+      </TouchableOpacity>
+
       <FlatList
         data={filterData}
         renderItem={renderItems}
@@ -78,4 +105,4 @@ const searchProducts = () => {
   )
 }
 
-export default searchProducts
+export default searchStores
